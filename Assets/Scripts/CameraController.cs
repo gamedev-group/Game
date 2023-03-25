@@ -38,8 +38,8 @@ public class CameraController : MonoBehaviour
             //if the target position (playerPos) is less than the min boundery, it will set the playerPos to min boundery 
             //if above max boundry, set it to max boundry 
             //if within it, then do not touch it 
-            playerPos.x = Mathf.Clamp(playerPos, minBoundary.x, maxBoundary.x); 
-            playerPos.y = Mathf.Clamp(playerPos, minBoundary.y, maxBoundary.y); 
+            playerPos.x = Mathf.Clamp(playerPos.x, minBoundary.x, maxBoundary.x); 
+            playerPos.y = Mathf.Clamp(playerPos.y, minBoundary.y, maxBoundary.y); 
 
         /*
             When t = 0, Vector3.Lerp(a, b, t) returns a.
