@@ -23,11 +23,11 @@ This game is a 2D puzzle-platformer with light action elements. It has a 2D pres
 - Envirionmental Spikes:
 -- Damaging the player 
 - Inventory:
--- Containing weapons to defeat enemies
--- Tools needed for jumping (trampoline/launchpad, extendo-pad, etc.)
+- - Containing weapons to defeat enemies
+- - Tools needed for jumping (trampoline/launchpad, extendo-pad, etc.)
 - Sound:
--- Having sound effect for each of the verbs
--- Baground Music
+- - Having sound effect for each of the verbs
+- - Baground Music
 
 ## Game Story:
 The protagonist of the game is a middle-aged man named Robin, whose name
@@ -57,5 +57,5 @@ The expected audience for this game is players from various age groups, but espe
 ## Estimated Development TIme (cost):
 The estimated time for the designing and implementing this game is about 7 weeks. 
 
-Risk Analysis
+## Risk Analysis
 
