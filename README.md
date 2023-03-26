@@ -21,9 +21,13 @@ This game is a 2D puzzle-platformer with light action elements. It has a 2D pres
 
 ## Features:
 - Envirionmental Spikes:
-- - Damaging the player
+-- Damaging the player 
 - Inventory:
+-- Containing weapons to defeat enemies
+-- Tools needed for jumping (trampoline/launchpad, extendo-pad, etc.)
 - Sound:
+-- Having sound effect for each of the verbs
+-- Baground Music
 
 ## Game Story:
 The protagonist of the game is a middle-aged man named Robin, whose name
@@ -43,3 +47,15 @@ Each level takes place within a single screen space, with the goal located near 
 
 As the player climbs the mountain, they will encounter new mechanics, enemies, and
 gadgets, and the scenery and backgrounds will change to reflect their progress. The player must be strategic in their use of resources and careful in their approach to reach the peak of the mountain.
+
+## Technical Develpoment:
+This is a 2D game which will be developed using Unity Game engine. We will roughly have (# of scenes). The development language will be C#.  Overall expected development time of roughly 7 weeks. 
+
+## Expected Audience:
+The expected audience for this game is players from various age groups, but especially those with disabilities as this game shows will and power that the player has throughout the game. This game’s target IMDB rating is E.
+
+## Estimated Development TIme (cost):
+The estimated time for the designing and implementing this game is about 7 weeks. 
+
+Risk Analysis
+
