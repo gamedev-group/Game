@@ -10,10 +10,7 @@ public class PlayerController : MonoBehaviour
     // Rigidbody will be used to apply movement to player
     private Rigidbody2D rb2d;
 
-    // Used to check whether player is currently touching the ground
-    private bool isGrounded = false;
-    //get the axis 
-    private float keyboardAxis; 
+    private bool facingRight = true;
 
     void Start()
     {
@@ -33,17 +30,15 @@ public class PlayerController : MonoBehaviour
     void WalkHandler()
     {
         // Get the horizontal input from the arrow keys or A and D keys
-        keyboardAxis = Input.GetAxis("Horizontal"); 
+        float keyboardAxis = Input.GetAxis("Horizontal");
+        float inputAxis = Input.GetAxisRaw("Horizontal");
+
+        if ((inputAxis > 0 && !facingRight) || (inputAxis < 0 && facingRight)) {
+            facingRight = !facingRight;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1);
+        }
+
         // Move the player left or right based on the horizontal input and moveSpeed
         rb2d.velocity = new Vector2(keyboardAxis * moveSpeed, rb2d.velocity.y);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // If the player collides with an object tagged as "Ground", they are standing on the ground
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
     }
 }
