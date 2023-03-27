@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b692f9fa327298743b025f1a6b237316, type: 3}
   m_Name: Spring
   m_EditorClassIdentifier: 
-  itemName: 
-  prefab: {fileID: 0}
+  itemName: Spring
+  prefab: {fileID: 7303735000216505609, guid: 93885be52510a7a4198ac461c37d8981, type: 3}

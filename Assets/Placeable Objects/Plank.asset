@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b692f9fa327298743b025f1a6b237316, type: 3}
   m_Name: Plank
   m_EditorClassIdentifier: 
-  itemName: 
-  prefab: {fileID: 0}
+  itemName: Plank
+  prefab: {fileID: 599669634644425495, guid: aef798eb34211b9419555ec6086af1d6, type: 3}
