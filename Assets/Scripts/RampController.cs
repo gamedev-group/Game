@@ -11,7 +11,8 @@ public class RampController : MonoBehaviour
     {
         if(collider.gameObject.tag == "Ramp")
         {
-            collider.GetComponent<Rigidbody2D>().velocity = new Vector2(horForce, verForce); 
+            float horizontalVelocity = collider.GetComponent<Rigidbody2D>().velocity.x; 
+            collider.GetComponent<Rigidbody2D>().velocity = new Vector2(horForce * horizontalVelocity, verForce); 
         }
     } 
 }
