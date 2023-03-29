@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
 
     private bool facingRight = true;
+    
+    private int currentHealth = 1; 
 
     void Start()
     {
