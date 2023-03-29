@@ -24,6 +24,18 @@ public class PlayerController : MonoBehaviour
         WalkHandler();
     }
     
+    //function: TakeDamage
+    //purpose: this function's purpose is to determine how much damage the player will take 
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if(currentHealth == 0)
+        {
+            Destroy(gameObject); 
+        }
+    }
+    
     //function: WalkHandler 
     //purpose: this function controls the players walking motion which is to the left or right in the x direction 
     //      control this by the arrow keys on the keyboard 
