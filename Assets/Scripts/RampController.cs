@@ -7,7 +7,7 @@ public class RampController : MonoBehaviour
     public float horForce; 
     public float verForce;
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerStay2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {
