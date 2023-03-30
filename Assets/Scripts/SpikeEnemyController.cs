@@ -43,7 +43,8 @@ public class SpikeEnemyController : MonoBehaviour
         transform.localScale = new Vector2(-(Mathf.Sign(rb2d.velocity.x)), transform.localScale.y);
     }
 
-
+    //function: IsFacingRight
+    //purpose: check if the enemy is facing right or not 
     private bool IsFacingRight()
     {
         return transform.localScale.x > Mathf.Epsilon;
