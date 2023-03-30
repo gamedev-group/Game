@@ -7,6 +7,8 @@ public class SpikeEnemyController : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
 
     Rigidbody2D rb2d;
+    
+    public int contactDamage = 1; 
 
     private void Start()
     {
@@ -27,9 +29,12 @@ public class SpikeEnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //enemy gets into contact with an enemy 
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.SetActive(false);
+            PlayerController player = collider.gameObject.GetComponent<PlayerController>(); 
+            //pass in the damage to the player 
+            player.TakeDamage(this.contactDamage); 
         }
     }
 
