@@ -32,7 +32,7 @@ public class SpikeEnemyController : MonoBehaviour
         //enemy gets into contact with an enemy 
         if(collision.gameObject.CompareTag("Player"))
         {
-            PlayerController player = collider.gameObject.GetComponent<PlayerController>(); 
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>(); 
             //pass in the damage to the player 
             player.TakeDamage(this.contactDamage); 
         }

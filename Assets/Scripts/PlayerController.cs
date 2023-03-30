@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             //destroy the player
             Destroy(gameObject); 
             //reset the level 
-            GameManager.instance.Reset(); 
+            GameManager.instance.ResetLevel(); 
         }
     }
     
