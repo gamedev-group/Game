@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null; 
-    public int maxLevel = 4;
+    public int maxLevel = 15;
     public int currentLevel = 1; 
 
     void Awake()
@@ -23,6 +23,14 @@ public class GameManager : MonoBehaviour
 
         //Don't destroy the object when loading the scenes to not lose information about the game (like levels or score)
         DontDestroyOnLoad(gameObject);
+    }
+    
+    //function: Reset
+    //purpose: Restart the current level 
+    public void ResetLevel()
+    {
+        //load the scene for the same level again 
+        SceneManager.LoadScene("Level" + currentLevel); 
     }
 
     //function: IncreaseLevel 
