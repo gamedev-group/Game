@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
 
         if(currentHealth == 0)
         {
+            //destroy the player
             Destroy(gameObject); 
+            //reset the level 
+            GameManager.instance.Reset(); 
         }
     }
     
