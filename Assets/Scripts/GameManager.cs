@@ -25,11 +25,28 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
-    //function: Reset
-    //purpose: Restart the current level 
+    //function: ContinueGame
+    //purpose: continue the game from the last level saved 
+    public void ContinueGame()
+    {
+        //load the scene for the last saved level 
+        SceneManager.LoadScene("Level" + currentLevel); 
+    }
+
+    //function: ResetLevel
+    //purpose: load the same level again
     public void ResetLevel()
     {
         //load the scene for the same level again 
+        SceneManager.LoadScene("Level" + currentLevel); 
+    }
+
+    //function: StartGame
+    //purpose: load level 1 
+    public void StartGame()
+    {
+        currentLevel = 1; 
+
         SceneManager.LoadScene("Level" + currentLevel); 
     }
 
