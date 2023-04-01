@@ -53,4 +53,10 @@ public class PauseMenuController : MonoBehaviour
     {
         Application.Quit(); 
     }
+
+    public void ResetLevel()
+    {
+        GameManager.instance.ResetLevel(); 
+        Time.timeScale = 1f; 
+    }
 }
