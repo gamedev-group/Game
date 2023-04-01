@@ -29,6 +29,8 @@ public class PauseMenuController : MonoBehaviour
         }
     }
 
+    //function: ResumeGame
+    //purpose: resume the level that was paused 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false); 
@@ -36,6 +38,8 @@ public class PauseMenuController : MonoBehaviour
         isGamePaused = false; 
     }
 
+    //function: PauseGame
+    //purpose: pause the current level of the game 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
@@ -43,17 +47,23 @@ public class PauseMenuController : MonoBehaviour
         isGamePaused = true; 
     }
 
+    //function: MenuButtonClicked
+    //purpose: go back to main menu 
     public void MenuButtonClicked()
     {
         SceneManager.LoadScene("MainMenu"); 
         Time.timeScale = 1f; 
     }
 
+    //function: QuitButtonClicked
+    //purpose: quit the entire game 
     public void QuitButtonClicked()
     {
         Application.Quit(); 
     }
 
+    //function: ResetLevel
+    //purpose: start over the current level of the game 
     public void ResetLevel()
     {
         GameManager.instance.ResetLevel(); 

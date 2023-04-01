@@ -8,6 +8,8 @@ public class SoundIconController : MonoBehaviour
 
     private static int countClick = 0; 
 
+    //function: SoundButtonClicked
+    //purpose: when the sound icon is clicked, we show the slider to manage the sound  
     public void SoundButtonClicked()
     {
         ++countClick;
