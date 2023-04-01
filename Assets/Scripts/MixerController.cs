@@ -9,7 +9,8 @@ public class MixerController : MonoBehaviour
 
     void Awake()
     {
-       // audioMixer.SetFloat("MasterVolume", Mathf.Log10(0.0005f) * 20); 
+       audioMixer.SetFloat("MasterVolume", Mathf.Log10(0.0005f) * 20); 
+       gameObject.SetActive(false); 
     }
 
     //function: SetVolume
