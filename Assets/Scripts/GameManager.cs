@@ -42,12 +42,12 @@ public class GameManager : MonoBehaviour
     }
 
     //function: StartGame
-    //purpose: load level 1 
+    //purpose: load the level select 
     public void StartGame()
     {
         currentLevel = 1; 
 
-        SceneManager.LoadScene("Level" + currentLevel); 
+        SceneManager.LoadScene("LevelSelect"); 
     }
 
     //function: IncreaseLevel 
