@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class ItemPlacer : MonoBehaviour
 {
+    //place whatever scriptable objects the player will use here
     public List<PlaceableScriptableObject> objectList = new List<PlaceableScriptableObject>();
+    
+    //store the items, and how much the player can use
     private Dictionary<PlaceableScriptableObject, int> objectDictionary = new Dictionary<PlaceableScriptableObject, int>();
+    
+    //this event is invoked on start, when the dictionary is completed.
     public delegate void OnItemDictionaryGenerated(Dictionary<PlaceableScriptableObject, int> dictionary); 
     public static OnItemDictionaryGenerated signalDictionary;
+    
+    //this event is invoked when the player uses an item.
     public delegate void OnItemUsed(PlaceableScriptableObject item, int newQuantity); 
     public static OnItemUsed itemUsed;
     public LayerMask groundLayer;
