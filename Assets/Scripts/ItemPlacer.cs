@@ -8,6 +8,8 @@ public class ItemPlacer : MonoBehaviour
     private Dictionary<PlaceableScriptableObject, int> objectDictionary = new Dictionary<PlaceableScriptableObject, int>();
     public delegate void OnItemDictionaryGenerated(Dictionary<PlaceableScriptableObject, int> dictionary); 
     public static OnItemDictionaryGenerated signalDictionary;
+    public delegate void OnItemUsed(PlaceableScriptableObject item, int newQuantity); 
+    public static OnItemUsed itemUsed;
     public LayerMask groundLayer;
     public Transform placeTransform;
     private int index = 0;
@@ -47,7 +49,7 @@ public class ItemPlacer : MonoBehaviour
         {
             //shoot a raycast downwards in front of the player towards the ground
             RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, Mathf.Infinity, groundLayer);
-            if (hit.collider != null && hit.normal.Equals(Vector2.up))
+            if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
             {
                 GameObject spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
                 
@@ -57,6 +59,8 @@ public class ItemPlacer : MonoBehaviour
                 }
 
                 //TODO: Remove the selected item from the list.
+                objectDictionary[selected]--;
+                itemUsed(selected, objectDictionary[selected]);
             }
         }
     }
