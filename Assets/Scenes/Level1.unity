@@ -485,6 +485,7 @@ MonoBehaviour:
   objectList:
   - {fileID: 11400000, guid: dd0423b5d6e6a7f4a9331feed0004bb5, type: 2}
   - {fileID: 11400000, guid: 1a56ec53a9f499a43aa5bf1882313220, type: 2}
+  selectionList: []
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2462,7 +2463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &530440506
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -7444,7 +7445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
