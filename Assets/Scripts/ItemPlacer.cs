@@ -5,13 +5,26 @@ using UnityEngine;
 public class ItemPlacer : MonoBehaviour
 {
     public List<PlaceableScriptableObject> objectList = new List<PlaceableScriptableObject>();
+    private Dictionary<PlaceableScriptableObject, int> objectDictionary = new Dictionary<PlaceableScriptableObject, int>();
+    public delegate void OnItemDictionaryGenerated(Dictionary<PlaceableScriptableObject, int> dictionary); 
+    public static OnItemDictionaryGenerated signalDictionary;
     public LayerMask groundLayer;
     public Transform placeTransform;
     private int index = 0;
     private PlaceableScriptableObject selected;
+    
 
     void Awake() {
         selected = objectList[index];
+
+        foreach (PlaceableScriptableObject obj in objectList) {
+            if (objectDictionary.ContainsKey(obj))
+                objectDictionary[obj]++;
+            else
+                objectDictionary.Add(obj, 1);
+        }
+
+        signalDictionary(objectDictionary);
     }
 
     void Update()

@@ -7,4 +7,5 @@ public class PlaceableScriptableObject : ScriptableObject
 {
     public string itemName;
     public GameObject prefab;
+    public Sprite icon;
 }
