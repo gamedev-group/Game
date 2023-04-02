@@ -6,13 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     // The speed at which the player moves left or right
     public float moveSpeed = 5f;
-
     // Rigidbody will be used to apply movement to player
     private Rigidbody2D rb2d;
-
     private bool facingRight = true;
     
-    private int currentHealth = 1; 
 
     void Start()
     {
@@ -24,21 +21,6 @@ public class PlayerController : MonoBehaviour
     {    
         //handle the walking of the player 
         WalkHandler();
-    }
-    
-    //function: TakeDamage
-    //purpose: this function's purpose is to determine how much damage the player will take 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        if(currentHealth == 0)
-        {
-            //destroy the player
-            Destroy(gameObject); 
-            //reset the level 
-            GameManager.instance.ResetLevel(); 
-        }
     }
     
     //function: WalkHandler 
