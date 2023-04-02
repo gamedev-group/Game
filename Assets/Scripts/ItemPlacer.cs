@@ -6,6 +6,7 @@ public class ItemPlacer : MonoBehaviour
 {
     //place whatever scriptable objects the player will use here
     public List<PlaceableScriptableObject> objectList = new List<PlaceableScriptableObject>();
+    public List<PlaceableScriptableObject> selectionList = new List<PlaceableScriptableObject>();
     
     //store the items, and how much the player can use
     private Dictionary<PlaceableScriptableObject, int> objectDictionary = new Dictionary<PlaceableScriptableObject, int>();
@@ -17,6 +18,10 @@ public class ItemPlacer : MonoBehaviour
     //this event is invoked when the player uses an item.
     public delegate void OnItemUsed(PlaceableScriptableObject item, int newQuantity); 
     public static OnItemUsed itemUsed;
+
+    //this event is invoked when the player changes their currently selected item.
+    public delegate void OnSelectedItemChanged(PlaceableScriptableObject item); 
+    public static OnSelectedItemChanged selectionChanged;
     public LayerMask groundLayer;
     public Transform placeTransform;
     private int index = 0;
@@ -24,16 +29,21 @@ public class ItemPlacer : MonoBehaviour
     
 
     void Awake() {
-        selected = objectList[index];
-
+        //read through each item in object list
         foreach (PlaceableScriptableObject obj in objectList) {
             if (objectDictionary.ContainsKey(obj))
                 objectDictionary[obj]++;
             else
                 objectDictionary.Add(obj, 1);
+                selectionList.Add(obj);
         }
+        //object dictionary is finished
+        //selection list now contains unique elements
 
         signalDictionary(objectDictionary);
+
+        selected = selectionList[index];
+        selectionChanged(selected);
     }
 
     void Update()
@@ -45,8 +55,9 @@ public class ItemPlacer : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E))
                 index++;
             
-            index = Modulo(index, objectList.Count); //the object list is circular
-            selected = objectList[index];
+            index = Modulo(index, selectionList.Count); //the object list is circular
+            selected = selectionList[index];
+            selectionChanged(selected);
 
             //TODO: Implement this as UI.
             print("Selected: " + selected.itemName);

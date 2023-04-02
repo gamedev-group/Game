@@ -9,11 +9,12 @@ public class ItemDisplay : MonoBehaviour
     public GameObject itemIcon;
 
     //TODO: refactor
-    Dictionary<PlaceableScriptableObject, TextMeshProUGUI> iconQuantities = new Dictionary<PlaceableScriptableObject, TextMeshProUGUI>();
+    Dictionary<PlaceableScriptableObject, ItemIcon> icons = new Dictionary<PlaceableScriptableObject, ItemIcon>();
 
     void Awake() {
         ItemPlacer.signalDictionary += InitializeDisplay;
         ItemPlacer.itemUsed += RemoveItemQuantity;
+        ItemPlacer.selectionChanged += ChangeSelectedItem;
     }
 
     //function: InitializeDisplay
@@ -28,17 +29,23 @@ public class ItemDisplay : MonoBehaviour
     //purpose: Creates an icon for an item and displays its quantity.
     void CreateIcon(PlaceableScriptableObject item, int quantity) {
         GameObject obj = Instantiate(itemIcon, transform.position, Quaternion.identity, transform);
-        Image objDisplay = obj.GetComponent<Image>();
-        TextMeshProUGUI quantityDisplay = obj.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        iconQuantities.Add(item, quantityDisplay);
+        ItemIcon icon = obj.GetComponent<ItemIcon>();
+        icons.Add(item, icon);
 
-        objDisplay.sprite = item.icon;
-        quantityDisplay.text = quantity.ToString();
+        icon.itemDisplay.sprite = item.icon;
+        icon.quantityDisplay.text = quantity.ToString();
     }
 
     //function: RemoveItemQuantity
     //purpose: When the user places down an item, this is called to visually decrement the item quantity.
     void RemoveItemQuantity(PlaceableScriptableObject item, int newQuantity) {
-        iconQuantities[item].text = newQuantity.ToString();
+        icons[item].quantityDisplay.text = newQuantity.ToString();
+    }
+
+    void ChangeSelectedItem(PlaceableScriptableObject item) {
+        foreach(PlaceableScriptableObject obj in icons.Keys) {
+            icons[obj].DeselectBackground();
+        }
+        icons[item].SelectBackground();
     }
 }
