@@ -45,4 +45,33 @@ public class CameraController : MonoBehaviour
         Vector2 newPos = Vector2.Lerp(startPos, targetPos, t); //lerping allows for the camera to smoothly slide towards player
         transform.position = new Vector3(newPos.x, newPos.y, -10); //z is -10 in order to capture all other sprites, which are at z = 0.
     }
+
+    private void OnDrawGizmos() {
+        if (leftBoundaryTransform == null || rightBoundaryTransform == null || upBoundaryTransform == null || downBoundaryTransform == null)
+            return;
+
+        leftBoundary = leftBoundaryTransform.position.x;
+        rightBoundary = rightBoundaryTransform.position.x;
+        upBoundary = upBoundaryTransform.position.y;
+        downBoundary = downBoundaryTransform.position.y;
+
+        float halfCameraHeight = Camera.main.orthographicSize;
+        float halfCameraWidth = Camera.main.orthographicSize * Camera.main.aspect;
+
+        float highestCameraPosition = upBoundary + halfCameraHeight;
+        float lowestCameraPosition = downBoundary - halfCameraHeight;
+
+        float leftmostCameraPosition = leftBoundary - halfCameraWidth;
+        float rightmostCameraPosition = rightBoundary + halfCameraWidth;
+
+        float centerX = leftmostCameraPosition+(rightmostCameraPosition - leftmostCameraPosition)/2;
+        float centerY = lowestCameraPosition+(highestCameraPosition - lowestCameraPosition)/2;
+
+        float sizeX = rightmostCameraPosition-leftmostCameraPosition;
+        float sizeY = highestCameraPosition-lowestCameraPosition;
+
+        Vector3 gizmoCenter = new Vector3(centerX, centerY,0);
+        Vector3 gizmoSize = new Vector3(sizeX, sizeY,0);
+        Gizmos.DrawWireCube(gizmoCenter, gizmoSize);
+    }
 }
