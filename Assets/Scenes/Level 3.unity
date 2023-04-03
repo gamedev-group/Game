@@ -2768,7 +2768,7 @@ PrefabInstance:
     - target: {fileID: 5077290538753498571, guid: 0774206b56a603c4cba08fedafbc7795,
         type: 3}
       propertyPath: objectList.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5077290538753498571, guid: 0774206b56a603c4cba08fedafbc7795,
         type: 3}
@@ -2782,6 +2782,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1a56ec53a9f499a43aa5bf1882313220,
         type: 2}
+    - target: {fileID: 5077290538753498571, guid: 0774206b56a603c4cba08fedafbc7795,
+        type: 3}
+      propertyPath: objectList.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: dd0423b5d6e6a7f4a9331feed0004bb5,
+        type: 2}
+    - target: {fileID: 5077290538753498571, guid: 0774206b56a603c4cba08fedafbc7795,
+        type: 3}
+      propertyPath: objectList.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a56ec53a9f499a43aa5bf1882313220,
+        type: 2}
+    - target: {fileID: 5077290538753498571, guid: 0774206b56a603c4cba08fedafbc7795,
+        type: 3}
+      propertyPath: objectList.Array.data[0].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077290538753498571, guid: 0774206b56a603c4cba08fedafbc7795,
+        type: 3}
+      propertyPath: objectList.Array.data[1].quantity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5077290538753498573, guid: 0774206b56a603c4cba08fedafbc7795,
         type: 3}
       propertyPath: m_Name

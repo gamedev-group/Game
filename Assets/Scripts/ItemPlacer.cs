@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ItemPlacer : MonoBehaviour
 {
-    //place whatever scriptable objects the player will use here
-    public List<PlaceableScriptableObject> objectList = new List<PlaceableScriptableObject>();
-    public List<PlaceableScriptableObject> selectionList = new List<PlaceableScriptableObject>();
-    
+    [System.Serializable]
+    public struct Item {
+        public PlaceableScriptableObject item;
+        public int quantity;
+    }
+    public Item[] objectList;
+
     //store the items, and how much the player can use
     private Dictionary<PlaceableScriptableObject, int> objectDictionary = new Dictionary<PlaceableScriptableObject, int>();
     
@@ -31,12 +34,8 @@ public class ItemPlacer : MonoBehaviour
     void Awake() {
         //read through each item in object list
         //TODO: This doesn't really split it correctly
-        foreach (PlaceableScriptableObject obj in objectList) {
-            if (objectDictionary.ContainsKey(obj))
-                objectDictionary[obj]++;
-            else
-                objectDictionary.Add(obj, 1);
-                selectionList.Add(obj);
+        foreach (Item i in objectList) {
+            objectDictionary.Add(i.item, i.quantity);
         }
     }
 
@@ -45,7 +44,7 @@ public class ItemPlacer : MonoBehaviour
         //selection list now contains unique elements
         signalDictionary(objectDictionary);
 
-        selected = selectionList[index];
+        selected = objectList[index].item;
         selectionChanged(selected);
     }
 
@@ -58,8 +57,8 @@ public class ItemPlacer : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E))
                 index++;
             
-            index = Modulo(index, selectionList.Count); //the object list is circular
-            selected = selectionList[index];
+            index = Modulo(index, objectList.Length); //the object list is circular
+            selected = objectList[index].item;
             selectionChanged(selected);
 
             //TODO: Implement this as UI.
