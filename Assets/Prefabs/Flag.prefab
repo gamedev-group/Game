@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 324698335403091357}
   m_Layer: 0
   m_Name: Flag
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6241012136898299521
 Transform:

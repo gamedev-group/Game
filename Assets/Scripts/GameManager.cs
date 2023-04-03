@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int maxLevel = 15;
     public int currentLevel = 1; 
 
+    public bool won = false; 
+
     void Awake()
     {
         if(instance == null)

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Plank
   - Spring
+  - Goal
   layers:
   - Default
   - TransparentFX

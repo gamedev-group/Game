@@ -28,7 +28,7 @@ public class ItemPlacer : MonoBehaviour
     private PlaceableScriptableObject selected;
     
 
-    void Awake() {
+    void Start() {
         //read through each item in object list
         foreach (PlaceableScriptableObject obj in objectList) {
             if (objectDictionary.ContainsKey(obj))
