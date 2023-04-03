@@ -11,10 +11,16 @@ public class ItemDisplay : MonoBehaviour
     //TODO: refactor
     Dictionary<PlaceableScriptableObject, ItemIcon> icons = new Dictionary<PlaceableScriptableObject, ItemIcon>();
 
-    void Awake() {
+    void OnEnable() {
         ItemPlacer.signalDictionary += InitializeDisplay;
         ItemPlacer.itemUsed += RemoveItemQuantity;
         ItemPlacer.selectionChanged += ChangeSelectedItem;
+    }
+
+    void OnDisable() {
+        ItemPlacer.signalDictionary -= InitializeDisplay;
+        ItemPlacer.itemUsed -= RemoveItemQuantity;
+        ItemPlacer.selectionChanged -= ChangeSelectedItem;
     }
 
     //function: InitializeDisplay

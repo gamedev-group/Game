@@ -28,8 +28,9 @@ public class ItemPlacer : MonoBehaviour
     private PlaceableScriptableObject selected;
     
 
-    void Start() {
+    void Awake() {
         //read through each item in object list
+        //TODO: This doesn't really split it correctly
         foreach (PlaceableScriptableObject obj in objectList) {
             if (objectDictionary.ContainsKey(obj))
                 objectDictionary[obj]++;
@@ -37,6 +38,9 @@ public class ItemPlacer : MonoBehaviour
                 objectDictionary.Add(obj, 1);
                 selectionList.Add(obj);
         }
+    }
+
+    void Start() {
         //object dictionary is finished
         //selection list now contains unique elements
         signalDictionary(objectDictionary);
@@ -65,7 +69,7 @@ public class ItemPlacer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //shoot a raycast downwards in front of the player towards the ground
-            RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, Mathf.Infinity, groundLayer);
+            RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
             if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
             {
                 GameObject spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
