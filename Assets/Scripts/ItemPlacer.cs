@@ -39,7 +39,6 @@ public class ItemPlacer : MonoBehaviour
         }
         //object dictionary is finished
         //selection list now contains unique elements
-
         signalDictionary(objectDictionary);
 
         selected = selectionList[index];
