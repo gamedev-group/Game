@@ -24,6 +24,8 @@ public class LevelCompletionController : MonoBehaviour
         }
     }
 
+    //function: ShowLevelCompletion
+    //purpose: show the level completion screen when player hits the flag 
     public void ShowLevelCompletion()
     {
         levelNumber.text = GameManager.instance.currentLevel.ToString(); 
@@ -32,6 +34,8 @@ public class LevelCompletionController : MonoBehaviour
         Time.timeScale = 0f; 
     }
 
+    //function: Reset
+    //purpose: reset the level 
     public void Reset()
     {
         //reset the level 
@@ -39,6 +43,8 @@ public class LevelCompletionController : MonoBehaviour
         Time.timeScale = 1f; 
     }
 
+    //function: NextLev
+    //purpose: move to th enext level when touching th flag 
     public void NextLev()
     {
         //move to the next level 
