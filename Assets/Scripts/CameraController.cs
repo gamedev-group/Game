@@ -72,6 +72,8 @@ public class CameraController : MonoBehaviour
 
         Vector3 gizmoCenter = new Vector3(centerX, centerY,0);
         Vector3 gizmoSize = new Vector3(sizeX, sizeY,0);
+
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
         Gizmos.DrawWireCube(gizmoCenter, gizmoSize);
     }
 }
