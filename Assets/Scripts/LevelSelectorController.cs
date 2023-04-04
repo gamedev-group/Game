@@ -20,6 +20,6 @@ public class LevelSelectorController : MonoBehaviour
         //set the current level to the level selected 
         GameManager.instance.currentLevel = level; 
         //open the corresponding level scene 
-        SceneManager.LoadScene("Level" + level.ToString());
+        SceneManager.LoadScene("Level " + level.ToString());
     }
 }
