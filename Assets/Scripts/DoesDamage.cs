@@ -13,5 +13,13 @@ public class DoesDamage : MonoBehaviour
             //pass in the damage to the player 
             playerHealth.TakeDamage(this.contactDamage); 
         }
+
+        //enemy gets into contact with spike
+        if (collision.gameObject.CompareTag("Spike") && this.gameObject.CompareTag("Enemy"))
+        {
+            print("Hit Spike");
+            //pass in the damage to the player 
+            Destroy(this.gameObject);
+        }
     }
 }

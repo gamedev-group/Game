@@ -10,12 +10,11 @@ public class Bouncer : MonoBehaviour
         if (other.CompareTag("Player")) {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bounceForce);
         }
-
         // TODO: Figure out why spring doesn't launch enemy
         if (other.CompareTag("Enemy"))
         {
             print("Hit Enemy");
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bounceForce);
+            other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounceForce));
         }
     }
 }

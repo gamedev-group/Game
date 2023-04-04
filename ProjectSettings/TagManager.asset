@@ -9,6 +9,7 @@ TagManager:
   - Plank
   - Spring
   - Goal
+  - Spike
   layers:
   - Default
   - TransparentFX

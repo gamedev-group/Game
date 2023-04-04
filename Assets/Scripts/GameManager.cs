@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public void ContinueGame()
     {
         //load the scene for the last saved level 
-        SceneManager.LoadScene("Level " + currentLevel); 
+        SceneManager.LoadScene("Level" + currentLevel); 
     }
 
     //function: ResetLevel
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         //load the scene for the same level again 
-        SceneManager.LoadScene("Level " + currentLevel); 
+        SceneManager.LoadScene("Level" + currentLevel); 
     }
 
     //function: StartGame
@@ -66,6 +66,6 @@ public class GameManager : MonoBehaviour
             currentLevel = 1;
         }
         //load the corresponding level (scene)
-        SceneManager.LoadScene("Level " + currentLevel); 
+        SceneManager.LoadScene("Level" + currentLevel); 
     }
 }
