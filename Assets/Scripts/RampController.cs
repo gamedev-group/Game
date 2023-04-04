@@ -9,10 +9,7 @@ public class RampController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player")
-        {
-            float horizontalVelocity = collider.GetComponent<Rigidbody2D>().velocity.x; 
-            collider.GetComponent<Rigidbody2D>().velocity = new Vector2(horForce * horizontalVelocity, verForce); 
-        }
+        float horizontalVelocity = collider.GetComponent<Rigidbody2D>().velocity.x; 
+        collider.GetComponent<Rigidbody2D>().velocity = new Vector2(horForce * horizontalVelocity, verForce); 
     } 
 }
