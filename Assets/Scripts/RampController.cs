@@ -6,13 +6,13 @@ public class RampController : MonoBehaviour
 {
     public float speedBoost = 20f;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         float horizontalVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity.x;
         print("Horizantal:" + horizontalVelocity);
         float verticalVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity.y;
         print("Vertical:" + verticalVelocity);
-        collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(speedBoost * horizontalVelocity, verticalVelocity);
+        collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(speedBoost * horizontalVelocity, verticalVelocity * 2);
 
 
     }
