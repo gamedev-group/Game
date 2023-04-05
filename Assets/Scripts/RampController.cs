@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class RampController : MonoBehaviour
 {
-    public float horForce; 
-    public float verForce;
+    public float speedBoost = 20f;
 
-    void OnTriggerStay2D(Collider2D collider)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        float horizontalVelocity = collider.GetComponent<Rigidbody2D>().velocity.x; 
-        collider.GetComponent<Rigidbody2D>().velocity = new Vector2(horForce * horizontalVelocity, verForce); 
-    } 
+        float horizontalVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity.x;
+        print("Horizantal:" + horizontalVelocity);
+        float verticalVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity.y;
+        print("Vertical:" + verticalVelocity);
+        collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(speedBoost * horizontalVelocity, verticalVelocity);
+
+
+    }
+
 }

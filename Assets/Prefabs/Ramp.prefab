@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4640310814432432843}
   - component: {fileID: 4742312471453458617}
   - component: {fileID: 5763459110290229496}
-  - component: {fileID: 9202162529878911451}
-  m_Layer: 0
+  - component: {fileID: 1421229021658380366}
+  - component: {fileID: 6520661658829065491}
+  m_Layer: 1
   m_Name: Ramp
   m_TagString: Ramp
   m_Icon: {fileID: 0}
@@ -100,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horForce: 0
   verForce: 0
---- !u!61 &9202162529878911451
-BoxCollider2D:
+--- !u!60 &1421229021658380366
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,7 +111,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -123,6 +124,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.3}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.2148995, y: 1.0022972}
+      - {x: -1.2255092, y: -1.1186177}
+      - {x: 1.2566904, y: -1.1432122}
+--- !u!114 &6520661658829065491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689850196123049150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9d38f204dd84be0837662d64c9b1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horForce: 0
+  verForce: 0
