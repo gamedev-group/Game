@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompletionController : MonoBehaviour
 {
-    public Text levelNumber; 
+    public LevelCompletionTextDisplayController levelCompletionText; 
     public GameObject levPanel;
 
     void Awake()
@@ -28,7 +28,7 @@ public class LevelCompletionController : MonoBehaviour
     //purpose: show the level completion screen when player hits the flag 
     public void ShowLevelCompletion()
     {
-        levelNumber.text = GameManager.instance.currentLevel.ToString(); 
+        levelCompletionText.renderLevelCompletionText(GameManager.instance.currentLevel); 
         //show the level completion message 
         levPanel.SetActive(true);
         Time.timeScale = 0f; 
