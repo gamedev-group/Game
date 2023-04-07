@@ -1,11 +1,11 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelSelectorController : MonoBehaviour
 {
     public int level;
-    public TextMeshProUGUI levelText;
+    public Text levelText;
 
     // Start is called before the first frame update
     void Start()
