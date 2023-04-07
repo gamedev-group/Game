@@ -11,6 +11,7 @@ TagManager:
   - Goal
   - Spike
   - Ramp
+  - FlyingEnemy
   layers:
   - Default
   - TransparentFX
