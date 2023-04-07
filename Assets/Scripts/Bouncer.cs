@@ -9,6 +9,7 @@ public class Bouncer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bounceForce);
+            SoundManagerController.PlaySoundEffect("springsound"); 
         }
         // TODO: Figure out why spring doesn't launch enemy
         if (other.CompareTag("Enemy"))
