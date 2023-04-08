@@ -22,7 +22,7 @@ public class SoundManagerController : MonoBehaviour
     }
     public static void PlaySoundEffect(string clip)
     {   
-        if(clip == "springsound")
+        if(clip == "spring")
         {
             audioSrc.PlayOneShot(springSounfEffect); 
         }

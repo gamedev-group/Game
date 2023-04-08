@@ -11,6 +11,7 @@ public class SpringController : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
+            SoundManagerController.PlaySoundEffect("spring"); 
             float horizontalVelocity = collider.GetComponent<Rigidbody2D>().velocity.x; 
             collider.GetComponent<Rigidbody2D>().velocity = new Vector2(horForce * horizontalVelocity, verForce); 
         }
