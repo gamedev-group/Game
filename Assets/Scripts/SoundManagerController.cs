@@ -6,12 +6,14 @@ using UnityEngine.Audio;
 public class SoundManagerController : MonoBehaviour
 {
     public static AudioClip springSounfEffect;
+    public static AudioClip spikeSounfEffect;
     public static AudioSource audioSrc; 
 
     // Start is called before the first frame update
     void Start()
     {
         springSounfEffect = Resources.Load<AudioClip>("springsound"); 
+        spikeSounfEffect = Resources.Load<AudioClip>("spikesound"); 
         audioSrc = GetComponent<AudioSource>(); 
     }
 
@@ -25,6 +27,10 @@ public class SoundManagerController : MonoBehaviour
         if(clip == "spring")
         {
             audioSrc.PlayOneShot(springSounfEffect); 
+        }
+        else if(clip == "spike")
+        {
+            audioSrc.PlayOneShot(spikeSounfEffect); 
         }
     }
 }

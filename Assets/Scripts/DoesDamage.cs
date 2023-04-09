@@ -21,5 +21,16 @@ public class DoesDamage : MonoBehaviour
             //pass in the damage to the player 
             Destroy(this.gameObject);
         }
+
+        //enemy gets into contact with spike
+        if (collision.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Spike"))
+        {
+            SoundManagerController.PlaySoundEffect("spike"); 
+
+            System.Threading.Thread.Sleep(1000);
+            print("yesss"); 
+            //pass in the damage to the player 
+            Destroy(this.gameObject);
+        }
     }
 }
