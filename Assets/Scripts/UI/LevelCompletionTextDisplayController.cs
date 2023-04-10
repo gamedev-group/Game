@@ -15,4 +15,9 @@ public class LevelCompletionTextDisplayController : MonoBehaviour
     {
         textRendererComponent.text = String.Format(levelCompletionText, levelNumber);
     }
+
+    public void renderLevelCompletionTimeText(float timeCompleted)
+    {
+        textRendererComponent.text = String.Format(levelCompletionText, timeCompleted);
+    }
 }

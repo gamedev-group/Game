@@ -21,6 +21,10 @@ public class LevelSelectorController : MonoBehaviour
         GameManager.instance.currentLevel = level; // comment out when testing specific levels
         //open the corresponding level scene 
         print(level.ToString());
+        
+        //start the time 
+        GameManager.instance.levelStartTime = Time.time; 
+
         SceneManager.LoadScene("Level" + level.ToString());
     }
 }

@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class LevelCompletionController : MonoBehaviour
 {
     public LevelCompletionTextDisplayController levelCompletionText; 
+
+    public LevelCompletionTextDisplayController levelTime; 
+
     public GameObject levPanel;
 
     void Awake()
@@ -29,6 +32,11 @@ public class LevelCompletionController : MonoBehaviour
     public void ShowLevelCompletion()
     {
         levelCompletionText.renderLevelCompletionText(GameManager.instance.currentLevel); 
+
+        GameManager.instance.levelEndTime = Time.time; 
+
+        levelTime.renderLevelCompletionTimeText(GameManager.instance.TotalTime()); 
+
         //show the level completion message 
         levPanel.SetActive(true);
         Time.timeScale = 0f; 
@@ -40,6 +48,10 @@ public class LevelCompletionController : MonoBehaviour
     {
         //reset the level 
         GameManager.instance.ResetLevel(); 
+
+        //start the time 
+        GameManager.instance.levelStartTime = Time.time; 
+        
         Time.timeScale = 1f; 
     }
 
@@ -49,6 +61,9 @@ public class LevelCompletionController : MonoBehaviour
     {
         //move to the next level 
         GameManager.instance.IncreaseLevel(); 
+        //start the time 
+        GameManager.instance.levelStartTime = Time.time; 
+
         Time.timeScale = 1f; 
     }
 }

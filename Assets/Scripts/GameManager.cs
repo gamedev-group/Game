@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public int maxLevel = 15;
     public int currentLevel = 1; 
 
+    public float levelStartTime; 
+    public float levelEndTime; 
+    public float totalTime; 
+
     public bool won = false; 
 
     void Awake()
@@ -31,6 +35,9 @@ public class GameManager : MonoBehaviour
     //purpose: continue the game from the last level saved 
     public void ContinueGame()
     {
+        //start the time 
+        GameManager.instance.levelStartTime = Time.time; 
+        
         //load the scene for the last saved level 
         SceneManager.LoadScene("Level" + currentLevel); 
     }
@@ -67,5 +74,10 @@ public class GameManager : MonoBehaviour
         }
         //load the corresponding level (scene)
         SceneManager.LoadScene("Level" + currentLevel); 
+    }
+
+    public float TotalTime()
+    {
+        return (levelEndTime - levelStartTime); 
     }
 }
