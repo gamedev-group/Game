@@ -8,6 +8,7 @@ public class SoundManagerController : MonoBehaviour
     public static AudioClip springSounfEffect;
     public static AudioClip spikeSounfEffect;
     public static AudioClip levComSoundEffect; 
+    public static AudioClip buttonClickSoundEffect; 
     public static AudioSource audioSrc; 
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class SoundManagerController : MonoBehaviour
         springSounfEffect = Resources.Load<AudioClip>("springsound"); 
         spikeSounfEffect = Resources.Load<AudioClip>("spikesound"); 
         levComSoundEffect = Resources.Load<AudioClip>("levelwin"); 
+        buttonClickSoundEffect = Resources.Load<AudioClip>("buttonpressed"); 
         audioSrc = GetComponent<AudioSource>(); 
     }
 
@@ -37,6 +39,10 @@ public class SoundManagerController : MonoBehaviour
         else if(clip == "levcomp")
         {
             audioSrc.PlayOneShot(levComSoundEffect); 
+        }
+        else if(clip == "buttonclick")
+        {
+            audioSrc.PlayOneShot(buttonClickSoundEffect); 
         }
     }
 }

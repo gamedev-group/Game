@@ -37,7 +37,12 @@ public class GameManager : MonoBehaviour
     {
         //start the time 
         GameManager.instance.levelStartTime = Time.time; 
-        
+
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+
         //load the scene for the last saved level 
         SceneManager.LoadScene("Level" + currentLevel); 
     }
@@ -46,6 +51,11 @@ public class GameManager : MonoBehaviour
     //purpose: load the same level again
     public void ResetLevel()
     {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+
         //load the scene for the same level again 
         SceneManager.LoadScene("Level" + currentLevel); 
     }
@@ -55,6 +65,11 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         currentLevel = 1; 
+
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
 
         SceneManager.LoadScene("LevelSelect"); 
     }
@@ -72,6 +87,12 @@ public class GameManager : MonoBehaviour
         {
             currentLevel = 1;
         }
+
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+
         //load the corresponding level (scene)
         SceneManager.LoadScene("Level" + currentLevel); 
     }

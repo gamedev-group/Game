@@ -51,7 +51,13 @@ public class PauseMenuController : MonoBehaviour
     //purpose: go back to main menu 
     public void MenuButtonClicked()
     {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+
         SceneManager.LoadScene("MainMenu"); 
+
         Time.timeScale = 1f; 
     }
 
@@ -59,6 +65,11 @@ public class PauseMenuController : MonoBehaviour
     //purpose: quit the entire game 
     public void QuitButtonClicked()
     {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+
         Application.Quit(); 
     }
 

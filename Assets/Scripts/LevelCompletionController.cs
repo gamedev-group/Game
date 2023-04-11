@@ -51,7 +51,7 @@ public class LevelCompletionController : MonoBehaviour
 
         //start the time 
         GameManager.instance.levelStartTime = Time.time; 
-        
+
         Time.timeScale = 1f; 
     }
 
@@ -59,7 +59,7 @@ public class LevelCompletionController : MonoBehaviour
     //purpose: move to th enext level when touching th flag 
     public void NextLev()
     {
-        //move to the next level 
+       //move to the next level 
         GameManager.instance.IncreaseLevel(); 
         //start the time 
         GameManager.instance.levelStartTime = Time.time; 
