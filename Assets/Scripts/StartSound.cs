@@ -13,10 +13,4 @@ public class StartSound : MonoBehaviour
         s1 = GetComponent<AudioSource>(); 
         s1.Play(); 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

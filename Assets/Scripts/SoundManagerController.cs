@@ -28,6 +28,7 @@ public class SoundManagerController : MonoBehaviour
     }
     public static void PlaySoundEffect(string clip)
     {   
+    //check to see which sound effect is requested by the action then play the corresponding one 
         if(clip == "spring")
         {
             audioSrc.PlayOneShot(springSounfEffect); 

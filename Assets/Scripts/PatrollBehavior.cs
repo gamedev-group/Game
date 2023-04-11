@@ -37,6 +37,8 @@ public class PatrollBehavior : MonoBehaviour
         }
     }
 
+    //function: MoveToardsNextPosition
+    //purpose: go towards the next position set 
     void MoveToardsNextPosition()
     {
         Vector2 targetPosition = positions[positionIndex];
@@ -46,12 +48,16 @@ public class PatrollBehavior : MonoBehaviour
                 movementSpeed * Time.deltaTime);
     }
 
+    //function: IsWithinRangeOfTarget
+    //purpose: check if the position of the enemy is within the range then return true or false 
     bool IsWithinRangeOfTarget()
     {
         Vector2 targetPosition = positions[positionIndex];
         return Vector2.Distance(gameObject.transform.position, targetPosition) < stoppingDistance;
     }
 
+    //function: IncrementTargetIndex
+    //purpose: increasing the index based on the minimum and maximum positions 
     void IncrementTargetIndex()
     {
         positionIndex += 1;
