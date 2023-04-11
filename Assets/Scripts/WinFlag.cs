@@ -9,6 +9,9 @@ public class WinFlag : MonoBehaviour
         //flag collides with the player -> player reaching the goal 
         if(other.gameObject.tag == "Player")
         {
+            SoundManagerController.PlaySoundEffect("levcomp"); 
+            //wait to play the sound effect 
+            System.Threading.Thread.Sleep(800);
             GameManager.instance.won = true; 
         }
     }
