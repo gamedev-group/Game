@@ -51,11 +51,6 @@ public class GameManager : MonoBehaviour
     //purpose: load the same level again
     public void ResetLevel()
     {
-        //sound effect of button click 
-        SoundManagerController.PlaySoundEffect("buttonclick"); 
-        //wait a little before changing the scene 
-        System.Threading.Thread.Sleep(500);
-
         //load the scene for the same level again 
         SceneManager.LoadScene("Level" + currentLevel); 
     }

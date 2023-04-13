@@ -77,6 +77,11 @@ public class PauseMenuController : MonoBehaviour
     //purpose: start over the current level of the game 
     public void ResetLevel()
     {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+        
         GameManager.instance.ResetLevel(); 
         Time.timeScale = 1f; 
     }

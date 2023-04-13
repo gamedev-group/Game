@@ -11,6 +11,11 @@ public class DoesDamage : MonoBehaviour
         //enemy gets into contact with player  
         if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
         {
+            //play the enemy hit sound effect 
+            SoundManagerController.PlaySoundEffect("enemyhit");
+            //wait to play the sound effect 
+            System.Threading.Thread.Sleep(500);
+
             //pass in the damage to the player 
             playerHealth.TakeDamage(this.contactDamage); 
         }
