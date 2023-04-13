@@ -12,6 +12,7 @@ public class SoundManagerController : MonoBehaviour
     public static AudioClip levComSoundEffect; 
     public static AudioClip buttonClickSoundEffect; 
     public static AudioClip enemyHitSoundEffect;
+    public static AudioClip plankSoundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class SoundManagerController : MonoBehaviour
         levComSoundEffect = Resources.Load<AudioClip>("levelwin"); 
         buttonClickSoundEffect = Resources.Load<AudioClip>("buttonpressed"); 
         enemyHitSoundEffect = Resources.Load<AudioClip>("enemyhit"); 
+        plankSoundEffect = Resources.Load<AudioClip>("plank"); 
         audioSrc = GetComponent<AudioSource>(); 
     }
 
@@ -48,6 +50,10 @@ public class SoundManagerController : MonoBehaviour
         else if(clip == "enemyhit")
         {
             audioSrc.PlayOneShot(enemyHitSoundEffect); 
+        }
+        else if(clip == "plank")
+        {
+            audioSrc.PlayOneShot(plankSoundEffect); 
         }
     }
 }

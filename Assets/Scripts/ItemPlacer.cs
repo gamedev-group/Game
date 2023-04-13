@@ -71,6 +71,10 @@ public class ItemPlacer : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
             if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
             {
+                if(selected.itemName == "Plank")
+                {
+                    SoundManagerController.PlaySoundEffect("plank");
+                }
                 GameObject spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
                 
                 //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
