@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
 
         if ((inputAxis > 0 && !facingRight) || (inputAxis < 0 && facingRight)) {
             facingRight = !facingRight;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1);
+
+            // In order for the freeze ray to function properly this is we need to rotate player
+            //transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1);
+            transform.Rotate(0f, 180f, 0f);
         }
 
         // Move the player left or right based on the horizontal input and moveSpeed
