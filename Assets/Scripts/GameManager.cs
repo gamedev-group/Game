@@ -96,4 +96,9 @@ public class GameManager : MonoBehaviour
     {
         return (levelEndTime - levelStartTime); 
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
