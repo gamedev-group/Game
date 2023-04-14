@@ -8,6 +8,8 @@ public class FreezeRayController : MonoBehaviour
     public LineRenderer lineRenderer;
     public float freezeRayLifeSpan = 0.03f;
 
+    private GameObject frozenEnemy;
+
     private void Start()
     {
         lineRenderer.enabled = false;
@@ -32,9 +34,16 @@ public class FreezeRayController : MonoBehaviour
 
             if (enemy != null)
             {
+                print("Hit enemy");
                 //TODO: Replace current version of enemy with a version of the enemy thats trapped
                 // in an ice cube. This object should essentially be a platform.
-                print("Hit enemy");
+                print(hitInfo.collider.gameObject.transform.GetChild(0).gameObject.name);
+                frozenEnemy = hitInfo.collider.gameObject.transform.GetChild(0).gameObject;
+
+                frozenEnemy.transform.SetParent(p: null);
+
+                hitInfo.transform.gameObject.SetActive(false);
+                frozenEnemy.transform.gameObject.SetActive(true);
             }
 
             lineRenderer.SetPosition(0, firePoint.position);
