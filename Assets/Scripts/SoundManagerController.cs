@@ -13,7 +13,6 @@ public class SoundManagerController : MonoBehaviour
     public static AudioClip buttonClickSoundEffect; 
     public static AudioClip enemyHitSoundEffect;
     public static AudioClip plankSoundEffect;
-    public static AudioClip wheelchairSoundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,6 @@ public class SoundManagerController : MonoBehaviour
         buttonClickSoundEffect = Resources.Load<AudioClip>("buttonpressed"); 
         enemyHitSoundEffect = Resources.Load<AudioClip>("enemyhit"); 
         plankSoundEffect = Resources.Load<AudioClip>("plank"); 
-        wheelchairSoundEffect = Resources.Load<AudioClip>("wheelchair"); 
         audioSrc = GetComponent<AudioSource>(); 
     }
 
