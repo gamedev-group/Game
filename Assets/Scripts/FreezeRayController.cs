@@ -20,6 +20,11 @@ public class FreezeRayController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            //play the sound effect 
+            SoundManagerController.PlaySoundEffect("freezeray"); 
+            //wait to play the sound effect 
+            System.Threading.Thread.Sleep(10);
+
             StartCoroutine(Shoot());
         }
     }
