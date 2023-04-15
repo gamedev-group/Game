@@ -9017,6 +9017,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5077290538753498568, guid: 0774206b56a603c4cba08fedafbc7795,
+        type: 3}
+      propertyPath: wheelchairSound
+      value: 
+      objectReference: {fileID: 5077290538659742166}
     - target: {fileID: 5077290538753498569, guid: 0774206b56a603c4cba08fedafbc7795,
         type: 3}
       propertyPath: m_RootOrder
@@ -9095,6 +9100,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0774206b56a603c4cba08fedafbc7795, type: 3}
+--- !u!82 &5077290538659742166 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4264161511459002763, guid: 0774206b56a603c4cba08fedafbc7795,
+    type: 3}
+  m_PrefabInstance: {fileID: 5077290538659742165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5762727797273405040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9110,7 +9121,12 @@ PrefabInstance:
     - target: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
         type: 3}
       propertyPath: m_Volume
-      value: 0.502
+      value: 0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5762727797394561976, guid: 969f937aae5b87640817d0c80819c9a6,
         type: 3}

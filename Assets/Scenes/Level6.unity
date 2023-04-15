@@ -4376,6 +4376,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5077290538753498568, guid: 0774206b56a603c4cba08fedafbc7795,
+        type: 3}
+      propertyPath: wheelchairSound
+      value: 
+      objectReference: {fileID: 1444067193}
     - target: {fileID: 5077290538753498569, guid: 0774206b56a603c4cba08fedafbc7795,
         type: 3}
       propertyPath: m_RootOrder
@@ -4482,6 +4487,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0774206b56a603c4cba08fedafbc7795, type: 3}
+--- !u!82 &1444067193 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4264161511459002763, guid: 0774206b56a603c4cba08fedafbc7795,
+    type: 3}
+  m_PrefabInstance: {fileID: 1444067192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1498746414
 GameObject:
   m_ObjectHideFlags: 0

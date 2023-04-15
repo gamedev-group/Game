@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // The speed at which the player moves left or right
     public float moveSpeed = 5f;
+    public AudioSource wheelchairSound; 
     // Rigidbody will be used to apply movement to player
     private Rigidbody2D rb2d;
     private bool facingRight = true;
@@ -37,6 +38,14 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1);
         }
 
+        if(inputAxis != 0)
+        {
+            wheelchairSound.enabled = true;
+        }
+        else 
+        {
+            wheelchairSound.enabled = false; 
+        }
         // Move the player left or right based on the horizontal input and moveSpeed
         rb2d.velocity = new Vector2(keyboardAxis * moveSpeed, rb2d.velocity.y);
     }
