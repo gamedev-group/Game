@@ -15,7 +15,6 @@ public class MoveBackForth : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         leftEnd = leftPoint.position.x;
         rightEnd = rightPoint.position.x;
-        print(leftEnd + " " + rightEnd);
     }
 
     private void FixedUpdate()
@@ -23,8 +22,7 @@ public class MoveBackForth : MonoBehaviour
         if ((rb2d.position.x > rightEnd && IsFacingRight()) || (rb2d.position.x < leftEnd && !IsFacingRight()))
             SwitchDirection();
 
-        print(moveSpeed * dir);
-        rb2d.velocity = new Vector2(moveSpeed * dir, 0);
+        rb2d.velocity = new Vector2(moveSpeed * dir, rb2d.velocity.y);
     }
 
     //function: IsFacingRight
