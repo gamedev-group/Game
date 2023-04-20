@@ -11,6 +11,10 @@ public class Bouncer : MonoBehaviour
 
         if ((other.CompareTag("Player") || other.CompareTag("Enemy"))) {
             animator.SetTrigger("contact");
+
+            //play the spring sound effect 
+            SoundManagerController.PlaySoundEffect("spring"); 
+
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bounceForce);
         }
     }

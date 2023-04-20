@@ -33,7 +33,7 @@ public class DoesDamage : MonoBehaviour
             //sound effect of spike 
             SoundManagerController.PlaySoundEffect("spike"); 
             //wait to play the sound effect 
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(400);
 
             //pass in the damage to the player 
             Destroy(this.gameObject);
