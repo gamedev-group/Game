@@ -30,6 +30,7 @@ public class ItemPlacer : MonoBehaviour
     private int index = 0;
     private PlaceableScriptableObject selected;
     
+    public static float magnetStartTime; 
 
     void Awake() {
         //read through each item in object list
@@ -67,25 +68,38 @@ public class ItemPlacer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //shoot a raycast downwards in front of the player towards the ground 
-            RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
-            if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
+            if(selected.itemName != "Magnet")
             {
-                if(selected.itemName == "Plank")
+                //shoot a raycast downwards in front of the player towards the ground 
+                RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
+                if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
                 {
-                    SoundManagerController.PlaySoundEffect("plank");
-                }
-                GameObject spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
-                
-                //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
-                if (transform.localScale.x < 0) {
-                    spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
-                }
+                    if(selected.itemName == "Plank")
+                    {
+                        SoundManagerController.PlaySoundEffect("plank");
+                    }
 
-                //TODO: Remove the selected item from the list.
+                    GameObject spawnedObj = Instantiate(selected.prefab, hit.point , Quaternion.identity);
+                    
+                    //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
+                    if (transform.localScale.x < 0) {
+                        spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                    }
+
+                    //TODO: Remove the selected item from the list.
+                    objectDictionary[selected]--;
+                    itemUsed(selected, objectDictionary[selected]);
+                }
+            }
+            else
+            {
+                GameManager.instance.hasMagnet = true; 
+                magnetStartTime = Time.time;
+
                 objectDictionary[selected]--;
                 itemUsed(selected, objectDictionary[selected]);
             }
+            
         }
     }
 

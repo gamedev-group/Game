@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public bool won = false; 
 
+    public bool hasMagnet = false; 
+
     void Awake()
     {
         if(instance == null)
