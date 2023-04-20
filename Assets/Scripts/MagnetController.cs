@@ -6,11 +6,11 @@ public class MagnetController : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.TryGetComponent<Block>(out Block block) && GameManager.instance.hasMagnet == true && (Mathf.Abs(transform.parent.position.x - collision.gameObject.transform.position.x) > 1.2) &&  (Mathf.Abs(transform.parent.position.y - collision.gameObject.transform.position.y) > 0.5))
+        if(collision.gameObject.TryGetComponent<Block>(out Block block) && GameManager.instance.hasMagnet == true && (Mathf.Abs(transform.parent.position.y - collision.gameObject.transform.position.y) > 0.5))
         {
             block.SetTarget(transform.parent.position, true); 
         }
-        else if(collision.gameObject.TryGetComponent<Block>(out Block block1) && GameManager.instance.hasMagnet == true &&(Mathf.Abs(transform.parent.position.x - collision.gameObject.transform.position.x) <= 1.2) && (Mathf.Abs(transform.parent.position.y - collision.gameObject.transform.position.y) <= 0.5))
+        else if(collision.gameObject.TryGetComponent<Block>(out Block block1) && GameManager.instance.hasMagnet == true && (Mathf.Abs(transform.parent.position.y - collision.gameObject.transform.position.y) <= 0.5))
         {
             GameManager.instance.hasMagnet = false; 
             block1.SetHasTarget(false); 
@@ -25,3 +25,4 @@ public class MagnetController : MonoBehaviour
         }
     }
 }
+//(Mathf.Abs(transform.parent.position.x - collision.gameObject.transform.position.x) > 1.2) &&  
