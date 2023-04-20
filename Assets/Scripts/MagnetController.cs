@@ -9,6 +9,8 @@ public class MagnetController : MonoBehaviour
         if(collision.gameObject.TryGetComponent<Block>(out Block block) && GameManager.instance.hasMagnet == true && (Mathf.Abs(transform.parent.position.y - collision.gameObject.transform.position.y) > 0.5))
         {
             block.SetTarget(transform.parent.position, true); 
+            //sound effect of magnet
+            SoundManagerController.PlaySoundEffect("magnet"); 
         }
         else if(collision.gameObject.TryGetComponent<Block>(out Block block1) && GameManager.instance.hasMagnet == true && (Mathf.Abs(transform.parent.position.y - collision.gameObject.transform.position.y) <= 0.5))
         {
