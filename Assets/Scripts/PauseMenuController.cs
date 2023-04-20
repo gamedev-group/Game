@@ -56,6 +56,8 @@ public class PauseMenuController : MonoBehaviour
         //wait a little before changing the scene 
         System.Threading.Thread.Sleep(500);
 
+        GameManager.instance.levelStartTime = 0f; 
+
         SceneManager.LoadScene("MainMenu"); 
 
         Time.timeScale = 1f; 
