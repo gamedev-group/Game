@@ -17,4 +17,9 @@ public class UIController : MonoBehaviour
     {
         GameManager.instance.ContinueGame(); 
     }
+
+    public void ExitButtonClicked()
+    {
+        GameManager.instance.ExitGame(); 
+    }
 }
