@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
     {    
         //handle the walking of the player 
         WalkHandler();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.instance.hasMagnet = false; 
+        }
     }
     
     //function: WalkHandler 
