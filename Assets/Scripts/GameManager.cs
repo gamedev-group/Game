@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     {
         //load the scene for the same level again 
         SceneManager.LoadScene("Level" + currentLevel); 
+        //reset the time 
+        GameManager.instance.levelStartTime = Time.time; 
     }
 
     //function: StartGame
