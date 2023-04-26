@@ -86,6 +86,11 @@ public class ItemPlacer : MonoBehaviour
                 //TODO: Remove the selected item from the list.
                 objectDictionary[selected]--;
                 itemUsed(selected, objectDictionary[selected]);
+            } else {
+                print(hit.collider != null);
+                print(hit.normal.Equals(Vector2.up));
+                print(objectDictionary[selected] != 0);
+                print("----");
             }
         }
     }
