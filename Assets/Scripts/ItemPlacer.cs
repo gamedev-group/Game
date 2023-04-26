@@ -68,7 +68,7 @@ public class ItemPlacer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //shoot a raycast downwards in front of the player towards the ground 
-            RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
+            RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 2.0f, groundLayer);
             if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
             {
                 print("Hit ground");

@@ -53,6 +53,8 @@ public class FreezeRayController : MonoBehaviour
                 frozenEnemy.transform.gameObject.SetActive(true);
                 frozenEnemy.GetComponent<Rigidbody2D>().isKinematic = true;
                 frozenEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                Destroy(frozenEnemy.GetComponent<Rigidbody2D>());
+                frozenEnemy.transform.rotation = Quaternion.identity;
             }
 
             lineRenderer.SetPosition(0, firePoint.position);
