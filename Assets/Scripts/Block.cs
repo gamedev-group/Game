@@ -32,7 +32,7 @@ public class Block: MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             GameManager.instance.hasMagnet = false; 
-            if(rb != null && this.tag == "Ramp")
+            if(rb != null)
             {
                 Destroy(this.GetComponent<Rigidbody2D>()); 
             }
