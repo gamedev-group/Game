@@ -94,6 +94,7 @@ public class ItemPlacer : MonoBehaviour
             else
             {
                 GameManager.instance.hasMagnet = true; 
+                GameManager.instance.hasReleased = false; 
                 magnetStartTime = Time.time;
 
                 objectDictionary[selected]--;

@@ -20,11 +20,22 @@ public class Block: MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if(hasTarget)
+        if(hasTarget && rb!= null)
         {
             //the direction moving 
             Vector3 targetDir = (targetPos - transform.position).normalized; 
             rb.velocity = new Vector2(targetDir.x, targetDir.y) * speed; 
+        }
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.instance.hasMagnet = false; 
+            if(rb != null && this.tag == "Ramp")
+            {
+                Destroy(this.GetComponent<Rigidbody2D>()); 
+            }
         }
     }
 

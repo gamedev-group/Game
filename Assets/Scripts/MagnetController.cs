@@ -10,7 +10,7 @@ public class MagnetController : MonoBehaviour
         {
             GameManager.instance.hasMagnet = false; 
             block1.SetHasTarget(false); 
-            if(collision.gameObject.tag == "Ramp")
+            if(collision.gameObject.tag == "Ramp" && collision.gameObject.GetComponent<Rigidbody2D>() != null)
             {
                 Destroy(collision.gameObject.GetComponent<Rigidbody2D>()); 
             }
