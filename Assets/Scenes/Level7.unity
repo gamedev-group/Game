@@ -2211,7 +2211,7 @@ PrefabInstance:
     - target: {fileID: -8414141595231287227, guid: b8aaab07e07904e76a0ce651859fae18,
         type: 3}
       propertyPath: speed
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6064273119933713596, guid: b8aaab07e07904e76a0ce651859fae18,
         type: 3}
@@ -2969,6 +2969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ramp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746746277653430431, guid: 757fae3f4e60040d48bc4341efc1fa78,
+        type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8746746277653430435, guid: 757fae3f4e60040d48bc4341efc1fa78,
         type: 3}
