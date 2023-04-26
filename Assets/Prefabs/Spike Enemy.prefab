@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 8402606818970980288}
   - component: {fileID: 8828706502734809938}
   - component: {fileID: 1634670300430990047}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Frozen Enemy
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 6782629977382061460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3536, y: 1.3536, z: 1.3536}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3083296279944276468}

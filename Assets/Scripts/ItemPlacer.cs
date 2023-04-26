@@ -71,6 +71,7 @@ public class ItemPlacer : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
             if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
             {
+                print("Hit ground");
                 if(selected.itemName == "Plank")
                 {
                     SoundManagerController.PlaySoundEffect("plank");

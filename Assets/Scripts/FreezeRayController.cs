@@ -45,6 +45,8 @@ public class FreezeRayController : MonoBehaviour
                 print(hitInfo.collider.gameObject.transform.GetChild(0).gameObject.name);
                 frozenEnemy = hitInfo.collider.gameObject.transform.GetChild(0).gameObject;
 
+                //frozenEnemy.transform.parent.gameObject.SetActive(false);
+
                 frozenEnemy.transform.SetParent(p: null);
 
                 hitInfo.transform.gameObject.SetActive(false);
