@@ -14,8 +14,6 @@ public class MagnetController : MonoBehaviour
             {
                 Destroy(collision.gameObject.GetComponent<Rigidbody2D>()); 
             }
-
-            print("bye"); 
         }
         else if(collision.gameObject.TryGetComponent<Block>(out Block block) && GameManager.instance.hasMagnet == true )
         {
@@ -23,13 +21,10 @@ public class MagnetController : MonoBehaviour
             block.SetTarget(transform.parent.position, true); 
             //sound effect of magnet
             SoundManagerController.PlaySoundEffect("magnet"); 
-
-            print("hello"); 
         }
         else if(collision.gameObject.TryGetComponent<Block>(out Block block2))
         {
             block2.SetHasTarget(false); 
-            print("noo"); 
         }
     }
 }
