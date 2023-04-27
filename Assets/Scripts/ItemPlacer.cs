@@ -73,7 +73,9 @@ public class ItemPlacer : MonoBehaviour
             {
                 //shoot a raycast downwards in front of the player towards the ground 
                 RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
-                if (hit.collider != null && hit.normal.Equals(Vector2.up) && objectDictionary[selected] != 0)
+                bool canPlace = (hit.collider != null && hit.normal.Equals(Vector2.up));
+                bool needsToPlace = selected.requiresGround;
+                if (canPlace  && objectDictionary[selected] != 0)
                 {
                     if(selected.itemName == "Plank")
                     {
@@ -87,7 +89,17 @@ public class ItemPlacer : MonoBehaviour
                         spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
                     }
 
-                    //TODO: Remove the selected item from the list.
+                    objectDictionary[selected]--;
+                    itemUsed(selected, objectDictionary[selected]);
+                }
+                else if (!needsToPlace  && objectDictionary[selected] != 0) {
+                    GameObject spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
+
+                    //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
+                    if (transform.rotation.eulerAngles.y == 180) {
+                        spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                    }
+
                     objectDictionary[selected]--;
                     itemUsed(selected, objectDictionary[selected]);
                 }

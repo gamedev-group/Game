@@ -16,8 +16,7 @@ public class SoundManagerController : MonoBehaviour
     public static AudioClip magnetSoundEffect;
     public static AudioClip freezeRaySoundEffect; 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         springSounfEffect = Resources.Load<AudioClip>("springsound"); 
         spikeSounfEffect = Resources.Load<AudioClip>("spikesound"); 
