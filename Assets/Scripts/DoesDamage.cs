@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoesDamage : MonoBehaviour
 {
-    public int contactDamage = 1; 
+    public int contactDamage = 1;
+
+    internal bool TryGetComponent<T>(out object rb)
+    {
+        throw new NotImplementedException();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
