@@ -14,6 +14,7 @@ public class SoundManagerController : MonoBehaviour
     public static AudioClip enemyHitSoundEffect;
     public static AudioClip plankSoundEffect;
     public static AudioClip magnetSoundEffect;
+    public static AudioClip freezeRaySoundEffect; 
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class SoundManagerController : MonoBehaviour
         enemyHitSoundEffect = Resources.Load<AudioClip>("enemyhit"); 
         plankSoundEffect = Resources.Load<AudioClip>("plank"); 
         magnetSoundEffect = Resources.Load<AudioClip>("magnet"); 
+        freezeRaySoundEffect = Resources.Load<AudioClip>("freezeray"); 
         audioSrc = GetComponent<AudioSource>(); 
     }
 
@@ -60,6 +62,9 @@ public class SoundManagerController : MonoBehaviour
         else if(clip == "magnet")
         {
             audioSrc.PlayOneShot(magnetSoundEffect); 
+        else if(clip == "freezeray")
+        {
+            audioSrc.PlayOneShot(freezeRaySoundEffect); 
         }
     }
 }

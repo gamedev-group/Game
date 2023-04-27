@@ -99,6 +99,11 @@ public class ItemPlacer : MonoBehaviour
 
                 objectDictionary[selected]--;
                 itemUsed(selected, objectDictionary[selected]);
+            } else {
+                print(hit.collider != null);
+                print(hit.normal.Equals(Vector2.up));
+                print(objectDictionary[selected] != 0);
+                print("----");
             }
             
         }
