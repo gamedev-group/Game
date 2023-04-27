@@ -49,6 +49,7 @@ public class ItemPlacer : MonoBehaviour
         selectionChanged(selected);
     }
 
+    [System.Obsolete]
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) {
@@ -82,7 +83,7 @@ public class ItemPlacer : MonoBehaviour
                     GameObject spawnedObj = Instantiate(selected.prefab, hit.point , Quaternion.identity);
                     
                     //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
-                    if (transform.localScale.x < 0) {
+                    if (transform.rotation.eulerAngles.y == 180) {
                         spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
                     }
 
@@ -99,13 +100,7 @@ public class ItemPlacer : MonoBehaviour
 
                 objectDictionary[selected]--;
                 itemUsed(selected, objectDictionary[selected]);
-            } else {
-                print(hit.collider != null);
-                print(hit.normal.Equals(Vector2.up));
-                print(objectDictionary[selected] != 0);
-                print("----");
             }
-            
         }
     }
 

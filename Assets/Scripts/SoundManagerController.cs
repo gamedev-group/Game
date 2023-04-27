@@ -61,7 +61,8 @@ public class SoundManagerController : MonoBehaviour
         }
         else if(clip == "magnet")
         {
-            audioSrc.PlayOneShot(magnetSoundEffect); 
+            audioSrc.PlayOneShot(magnetSoundEffect);
+        } 
         else if(clip == "freezeray")
         {
             audioSrc.PlayOneShot(freezeRaySoundEffect); 

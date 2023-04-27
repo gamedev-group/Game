@@ -7,8 +7,7 @@ public class FreezeRayController : MonoBehaviour
     public Transform firePoint;
     public LineRenderer lineRenderer;
     public float freezeRayLifeSpan = 0.03f;
-
-    private GameObject frozenEnemy;
+    public GameObject iceCube;
 
     private void Start()
     {
@@ -35,30 +34,22 @@ public class FreezeRayController : MonoBehaviour
 
         if (hitInfo)
         {
-            DoesDamage enemy = hitInfo.transform.GetComponent<DoesDamage>();
-
-            if (enemy != null)
+            if (hitInfo.transform.TryGetComponent<DoesDamage>(out DoesDamage enemy))
             {
-                print("Hit enemy");
-                //TODO: Replace current version of enemy with a version of the enemy thats trapped
-                // in an ice cube. This object should essentially be a platform.
-                print(hitInfo.collider.gameObject.transform.GetChild(0).gameObject.name);
-                frozenEnemy = hitInfo.collider.gameObject.transform.GetChild(0).gameObject;
-
-                //frozenEnemy.transform.parent.gameObject.SetActive(false);
-
-                frozenEnemy.transform.SetParent(p: null);
-
-                hitInfo.transform.gameObject.SetActive(false);
-                frozenEnemy.transform.gameObject.SetActive(true);
-                frozenEnemy.GetComponent<Rigidbody2D>().isKinematic = true;
-                frozenEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                Destroy(frozenEnemy.GetComponent<Rigidbody2D>());
-                frozenEnemy.transform.rotation = Quaternion.identity;
+                Instantiate(iceCube, hitInfo.transform.position, Quaternion.identity);
+                if (enemy.TryGetComponent<PatrollBehavior>(out PatrollBehavior pB)) {
+                    pB.enabled = false;
+                }
+                if (enemy.TryGetComponent<Animator>(out Animator animator)) {
+                    animator.enabled = false;
+                }
             }
 
-            lineRenderer.SetPosition(0, firePoint.position);
-            lineRenderer.SetPosition(1, hitInfo.point);
+            print(firePoint.position);
+            print(hitInfo.point);
+
+            lineRenderer.SetPosition(0, Vector2.zero);
+            lineRenderer.SetPosition(1, hitInfo.point.x * Vector2.right);
         }
         else
         {
@@ -66,11 +57,8 @@ public class FreezeRayController : MonoBehaviour
             lineRenderer.SetPosition(1, firePoint.position + firePoint.right * 100);
         }
 
-
         lineRenderer.enabled = true;
-
         yield return new WaitForSeconds(freezeRayLifeSpan);
-
         lineRenderer.enabled = false;
     }
 
