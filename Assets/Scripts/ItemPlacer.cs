@@ -69,12 +69,12 @@ public class ItemPlacer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //shoot a raycast downwards in front of the player towards the ground 
+            RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
+            bool canPlace = (hit.collider != null && hit.normal.Equals(Vector2.up));
+            bool needsToPlace = selected.requiresGround;
             if(selected.itemName != "Magnet")
             {
-                //shoot a raycast downwards in front of the player towards the ground 
-                RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
-                bool canPlace = (hit.collider != null && hit.normal.Equals(Vector2.up));
-                bool needsToPlace = selected.requiresGround;
                 if (canPlace  && objectDictionary[selected] != 0)
                 {
                     if(selected.itemName == "Plank")
@@ -106,12 +106,15 @@ public class ItemPlacer : MonoBehaviour
             }
             else
             {
-                GameManager.instance.hasMagnet = true; 
-                GameManager.instance.hasReleased = false; 
-                magnetStartTime = Time.time;
+                if (canPlace  && objectDictionary[selected] != 0)
+                {
+                    GameManager.instance.hasMagnet = true; 
+                    GameManager.instance.hasReleased = false; 
+                    magnetStartTime = Time.time;
 
-                objectDictionary[selected]--;
-                itemUsed(selected, objectDictionary[selected]);
+                    objectDictionary[selected]--;
+                    itemUsed(selected, objectDictionary[selected]);
+                }
             }
         }
     }
