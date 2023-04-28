@@ -59,6 +59,11 @@ public class LevelCompletionController : MonoBehaviour
     //purpose: move to th enext level when touching th flag 
     public void NextLev()
     {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+        
        //move to the next level 
         GameManager.instance.IncreaseLevel(); 
         //start the time 

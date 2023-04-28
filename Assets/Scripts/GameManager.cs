@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null; 
     public int maxLevel = 15;
-    public int currentLevel = 1; 
+    public int currentLevel = 0; 
 
     public float levelStartTime; 
     public float levelEndTime; 
@@ -87,11 +87,6 @@ public class GameManager : MonoBehaviour
         {
             currentLevel = 1;
         }
-
-        //sound effect of button click 
-        SoundManagerController.PlaySoundEffect("buttonclick"); 
-        //wait a little before changing the scene 
-        System.Threading.Thread.Sleep(500);
 
         //load the corresponding level (scene)
         SceneManager.LoadScene("Level" + currentLevel); 

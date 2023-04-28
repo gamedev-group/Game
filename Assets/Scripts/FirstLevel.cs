@@ -12,7 +12,7 @@ public class FirstLevel : MonoBehaviour
 
         if(changeTime <= 0)
         {
-            SceneManager.LoadScene("Level1"); 
+            GameManager.instance.IncreaseLevel(); 
         }
     }
 }
