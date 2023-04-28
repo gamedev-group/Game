@@ -33,6 +33,7 @@ public class FreezeRayController : MonoBehaviour
         {
             if (hitInfo.transform.TryGetComponent<DoesDamage>(out DoesDamage enemy))
             {
+                print("Hit Enemy");
                 Instantiate(iceCube, hitInfo.transform.position, Quaternion.identity);
                 if (enemy.TryGetComponent<PatrollBehavior>(out PatrollBehavior pB)) {
                     pB.enabled = false;
@@ -40,7 +41,7 @@ public class FreezeRayController : MonoBehaviour
                 if (enemy.TryGetComponent<Animator>(out Animator animator)) {
                     animator.enabled = false;
                 }
-                enemy.contactDamage = 0;
+                Destroy(enemy.GetComponent<DoesDamage>());
             }
 
             print(transform.position);
