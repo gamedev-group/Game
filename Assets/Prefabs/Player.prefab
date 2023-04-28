@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193907308071828772}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Place Position
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193907309270760633}
   - component: {fileID: 1193907309270760632}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Collector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1193907309356819923}
   - component: {fileID: 1193907309356819920}
   - component: {fileID: 1193907309356819921}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -364,8 +364,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
+    pivot: {x: 0.40625, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1193907309968874143}
   - component: {fileID: 1193907309968874142}
   - component: {fileID: 1193907309968874113}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
