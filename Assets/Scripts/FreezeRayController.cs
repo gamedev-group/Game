@@ -40,6 +40,7 @@ public class FreezeRayController : MonoBehaviour
                 if (enemy.TryGetComponent<Animator>(out Animator animator)) {
                     animator.enabled = false;
                 }
+                enemy.contactDamage = 0;
             }
 
             print(transform.position);
