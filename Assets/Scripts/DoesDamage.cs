@@ -15,13 +15,9 @@ public class DoesDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //enemy gets into contact with player  
-        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
+        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth) && this.gameObject.CompareTag("Enemy"))
         {
-            //play the enemy hit sound effect 
-            SoundManagerController.PlaySoundEffect("enemyhit");
-            //wait to play the sound effect 
-            System.Threading.Thread.Sleep(500);
-
+            GameManager.instance.hitEnemyOrSpike = "Enemy"; 
             //pass in the damage to the player 
             playerHealth.TakeDamage(this.contactDamage); 
         }
@@ -34,15 +30,11 @@ public class DoesDamage : MonoBehaviour
         }
 
         //Player gets into contact with spike
-        if (collision.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Spike") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth2))
         {
-            //sound effect of spike 
-            SoundManagerController.PlaySoundEffect("spike"); 
-            //wait to play the sound effect 
-            System.Threading.Thread.Sleep(400);
-
+            GameManager.instance.hitEnemyOrSpike = "Spike"; 
             //pass in the damage to the player 
-            Destroy(this.gameObject);
+            playerHealth2.TakeDamage(this.contactDamage); 
         }
     }
 }

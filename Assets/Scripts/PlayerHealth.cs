@@ -14,6 +14,21 @@ public class PlayerHealth : MonoBehaviour
 
         if(currentHealth == 0)
         {
+            if(GameManager.instance.hitEnemyOrSpike == "Spike")
+            {
+                //sound effect of spike 
+                SoundManagerController.PlaySoundEffect("spike"); 
+                //wait to play the sound effect 
+                System.Threading.Thread.Sleep(600);
+            }
+            else if(GameManager.instance.hitEnemyOrSpike == "Enemy")
+            {
+                //play the enemy hit sound effect 
+                SoundManagerController.PlaySoundEffect("enemyhit");
+                //wait to play the sound effect 
+                System.Threading.Thread.Sleep(500);
+            }
+            
             //reset the level 
             GameManager.instance.ResetLevel(); 
         }

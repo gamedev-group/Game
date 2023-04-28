@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public bool hasMagnet = false; 
     public bool hasReleased = false; 
+    public string hitEnemyOrSpike; 
 
     void Awake()
     {
@@ -64,8 +65,6 @@ public class GameManager : MonoBehaviour
     //purpose: load the level select 
     public void StartGame()
     {
-        currentLevel = 1; 
-
         //sound effect of button click 
         SoundManagerController.PlaySoundEffect("buttonclick"); 
         //wait a little before changing the scene 
