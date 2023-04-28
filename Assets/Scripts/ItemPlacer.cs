@@ -73,7 +73,8 @@ public class ItemPlacer : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
             bool canPlace = (hit.collider != null && hit.normal.Equals(Vector2.up));
             bool needsToPlace = selected.requiresGround;
-            if(selected.itemName != "Magnet")
+            GameObject spawnedObj;
+            if (selected.itemName != "Magnet")
             {
                 if (canPlace  && objectDictionary[selected] != 0)
                 {
@@ -81,23 +82,45 @@ public class ItemPlacer : MonoBehaviour
                     {
                         SoundManagerController.PlaySoundEffect("plank");
                     }
+                    print("Floor Hit" + hit.point);
+                    if(selected.itemName == "Freeze Ray")
+                    {
 
-                    GameObject spawnedObj = Instantiate(selected.prefab, hit.point , Quaternion.identity);
-                    
-                    //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
-                    if (transform.rotation.eulerAngles.y == 180) {
-                        spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
                     }
+                    else
+                    {
+                        spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
+                        //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
+                        if (transform.rotation.eulerAngles.y == 180)
+                        {
+                            spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        }
+                    }
+                    
+                    
 
                     objectDictionary[selected]--;
                     itemUsed(selected, objectDictionary[selected]);
                 }
                 else if (!needsToPlace  && objectDictionary[selected] != 0) {
-                    GameObject spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
+                    if (selected.itemName == "Freeze Ray")
+                    {
+
+                        spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
+                    }
+                    else
+                    {
+                        spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
+                    }
 
                     //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
                     if (transform.rotation.eulerAngles.y == 180) {
-                        spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        if (selected.itemName != "Freeze Ray")
+                        {
+                            spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        }
+                        
                     }
 
                     objectDictionary[selected]--;

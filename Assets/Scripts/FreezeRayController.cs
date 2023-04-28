@@ -5,8 +5,11 @@ using UnityEngine;
 public class FreezeRayController : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    public float freezeRayLifeSpan = 0.03f;
+    public float freezeRayLifeSpan = 0.03f; // Keep at 0.03
     public GameObject iceCube;
+
+    private GameObject player;
+    private Transform firePoint;
 
     private void Awake() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -14,20 +17,28 @@ public class FreezeRayController : MonoBehaviour
 
     private void Start()
     {
+        lineRenderer.enabled = false;
+
+        player = GameObject.Find("Player");
+        print(player.name);
+        firePoint = player.transform.Find("Place Position");
+        print(firePoint.name);
+        
+        
         //play the sound effect 
         SoundManagerController.PlaySoundEffect("freezeray"); 
         
         //wait to play the sound effect 
         System.Threading.Thread.Sleep(10);
 
-        Shoot();
+        StartCoroutine(Shoot());
 
-        Invoke("SelfDestruct", freezeRayLifeSpan);
+        //Invoke("SelfDestruct", freezeRayLifeSpan);
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right);
+        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
 
         if (hitInfo)
         {
@@ -44,17 +55,29 @@ public class FreezeRayController : MonoBehaviour
                 Destroy(enemy.GetComponent<DoesDamage>());
             }
 
-            print(transform.position);
-            print(hitInfo.point);
+            Vector3 hitPointPos = new Vector3(hitInfo.point.x, hitInfo.point.y, 0f);
 
-            lineRenderer.SetPosition(0, (transform.position.x - hitInfo.point.x) * -Vector2.right);
-            lineRenderer.SetPosition(1, Vector2.zero);
+            print("Player Position" + player.transform.position);
+            print("HitPoint Position" + hitPointPos);
+
+
+            lineRenderer.SetPosition(0, player.transform.position);
+            lineRenderer.SetPosition(1, hitPointPos);
         }
         else
         {
-            lineRenderer.SetPosition(0, Vector2.zero);
-            lineRenderer.SetPosition(1, transform.position + transform.right * 100);
+            lineRenderer.SetPosition(0, player.transform.position);
+            lineRenderer.SetPosition(1, player.transform.position + player.transform.right * 100);
         }
+
+
+        lineRenderer.enabled = true;
+
+        yield return new WaitForSeconds(freezeRayLifeSpan);
+
+        //lineRenderer.enabled = false;
+
+        SelfDestruct();
     }
 
     void SelfDestruct() {

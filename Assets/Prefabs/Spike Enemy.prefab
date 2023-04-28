@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3083296279403631750}
+  - component: {fileID: 8505793005467246726}
   m_Layer: 1
   m_Name: Spike Enemy
   m_TagString: Enemy
@@ -96,6 +97,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8505793005467246726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3083296279403631751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae6ded5cf63ae94bb1fbfead0ee5168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 1
 --- !u!1 &3083296279944276469
 GameObject:
   m_ObjectHideFlags: 0
