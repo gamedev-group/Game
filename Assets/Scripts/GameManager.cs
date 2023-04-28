@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
         //load the corresponding level (scene)
         SceneManager.LoadScene("Level" + currentLevel); 
-    }
+    } 
 
     public float TotalTime()
     {
