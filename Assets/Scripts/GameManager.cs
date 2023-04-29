@@ -100,4 +100,28 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    //function: Credits
+    //purpose: display the credits 
+    public void Credits()
+    {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+        
+        SceneManager.LoadScene("Credits"); 
+    }
+
+    //function: Back
+    //purpose: go back to the main menu 
+    public void Back()
+    {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+
+        SceneManager.LoadScene("MainMenu"); 
+    }
 }

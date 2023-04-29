@@ -18,8 +18,24 @@ public class UIController : MonoBehaviour
         GameManager.instance.ContinueGame(); 
     }
 
+    //function: ExitButtonClicked
+    //purpose: exit the game 
     public void ExitButtonClicked()
     {
         GameManager.instance.ExitGame(); 
+    }
+
+    //function: CreditsButtonClicked
+    //purpose: display the credits 
+    public void CreditsButtonClicked()
+    {
+        GameManager.instance.Credits(); 
+    }
+
+    //function: BackButtonClicked
+    //purpose: go back to main menu 
+    public void BackButtonClicked()
+    {
+        GameManager.instance.Back(); 
     }
 }
