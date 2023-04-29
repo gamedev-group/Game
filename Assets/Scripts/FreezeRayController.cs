@@ -53,6 +53,7 @@ public class FreezeRayController : MonoBehaviour
                     animator.enabled = false;
                 }
                 Destroy(enemy.GetComponent<DoesDamage>());
+                Destroy(enemy.GetComponent<Rigidbody2D>());
             }
 
             Vector3 hitPointPos = new Vector3(hitInfo.point.x, hitInfo.point.y, 0f);
