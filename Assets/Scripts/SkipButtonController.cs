@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkipButtonController : MonoBehaviour
 {
@@ -11,6 +12,18 @@ public class SkipButtonController : MonoBehaviour
         //wait a little before changing the scene 
         System.Threading.Thread.Sleep(500);
 
-        GameManager.instance.IncreaseLevel(); 
+        //move from intro cut scene to level 1 
+        if(GameManager.instance.currentLevel == 0)
+        {
+            GameManager.instance.IncreaseLevel(); 
+        }
+        //move from the last cut scene to main menu 
+        else
+        {
+            //set the current level to 1 
+            GameManager.instance.currentLevel = 1; 
+            //load the main menu scene
+            SceneManager.LoadScene("MainMenu"); 
+        }
     }
 }
