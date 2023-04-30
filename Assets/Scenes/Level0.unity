@@ -741,6 +741,8 @@ PlayableDirector:
     value: {fileID: 325568975}
   - key: {fileID: -1946428558636122225, guid: c01e8a51800a946b68fa6b05af4ea873, type: 2}
     value: {fileID: 38918292}
+  - key: {fileID: -7178159712770485444, guid: c01e8a51800a946b68fa6b05af4ea873, type: 2}
+    value: {fileID: 777621441}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &263139937
@@ -945,6 +947,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSound
       objectReference: {fileID: 0}
+    - target: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: beddc896944f54fd78450a6ebec3c17c, type: 3}
     - target: {fileID: 5762727797394561976, guid: 969f937aae5b87640817d0c80819c9a6,
         type: 3}
       propertyPath: m_RootOrder
@@ -1000,8 +1012,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8205951368488008487, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: s1
+      value: 
+      objectReference: {fileID: 382535691}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 969f937aae5b87640817d0c80819c9a6, type: 3}
+--- !u!82 &382535691 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 382535690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &514276132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1258,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771546314}
   m_CullTransparentMesh: 1
+--- !u!1 &777621441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5762727797394561974, guid: 969f937aae5b87640817d0c80819c9a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 382535690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832447954
 GameObject:
   m_ObjectHideFlags: 0
