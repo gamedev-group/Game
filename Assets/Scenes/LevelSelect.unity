@@ -192,6 +192,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f8b6a7c503724227add74c120e3b689, type: 3}
+--- !u!1 &71047011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6109323186874398607, guid: 8f8b6a7c503724227add74c120e3b689,
+    type: 3}
+  m_PrefabInstance: {fileID: 71047010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &253401941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,12 +723,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3687398194229105440, guid: 1ad7b96fecac6924f904ccfcd30d0bca,
     type: 3}
   m_PrefabInstance: {fileID: 438145850}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &516511853 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5656087218143897699, guid: fe10d5e3b54a448219361194cbc8a306,
-    type: 3}
-  m_PrefabInstance: {fileID: 1701164468}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &518303298
 PrefabInstance:
@@ -2604,8 +2604,24 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9165088167194467313, guid: fe10d5e3b54a448219361194cbc8a306,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165088167932138958, guid: fe10d5e3b54a448219361194cbc8a306,
+        type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 71047011}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe10d5e3b54a448219361194cbc8a306, type: 3}
+--- !u!224 &1701164469 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9165088167194467313, guid: fe10d5e3b54a448219361194cbc8a306,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701164468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1728590382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2830,7 +2846,7 @@ RectTransform:
   m_Children:
   - {fileID: 771240313}
   - {fileID: 1357495592}
-  - {fileID: 516511853}
+  - {fileID: 1701164469}
   - {fileID: 1349117205}
   m_Father: {fileID: 0}
   m_RootOrder: 2

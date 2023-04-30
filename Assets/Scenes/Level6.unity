@@ -338,6 +338,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1878140242347724570, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 542701241}
     - target: {fileID: 6043139020465943127, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -530,6 +535,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48884c4a576d14b8c8aa4e875ee1b41c, type: 3}
+--- !u!1 &542701241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 644054180457454397, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+    type: 3}
+  m_PrefabInstance: {fileID: 542701240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &940604247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,6 +4816,16 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.325
       objectReference: {fileID: 0}
+    - target: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 20363478151b64281a0a8a70e808ea55, type: 3}
     - target: {fileID: 5762727797394561976, guid: 969f937aae5b87640817d0c80819c9a6,
         type: 3}
       propertyPath: m_RootOrder
@@ -4860,8 +4881,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8205951368488008487, guid: 969f937aae5b87640817d0c80819c9a6,
+        type: 3}
+      propertyPath: s1
+      value: 
+      objectReference: {fileID: 1688728451}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 969f937aae5b87640817d0c80819c9a6, type: 3}
+--- !u!82 &1688728451 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5762727797394561975, guid: 969f937aae5b87640817d0c80819c9a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1688728450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1742767608
 PrefabInstance:
   m_ObjectHideFlags: 0

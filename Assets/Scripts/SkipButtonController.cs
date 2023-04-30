@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SkipButtonController : MonoBehaviour
 {
+    //function: SkipButtonPressed
+    //purpose: change the scene and skip the current scene 
     public void SkipButtonPressed()
     {
         //sound effect of button click 
