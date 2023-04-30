@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null; 
-    public int maxLevel = 15;
+    public int maxLevel = 11;
     public int currentLevel = 0; 
 
     public float levelStartTime; 

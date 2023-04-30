@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69315ec77e7db42c9829e6768be2574f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLevel: 15
+  maxLevel: 11
   currentLevel: 1
+  levelStartTime: 0
+  levelEndTime: 0
+  totalTime: 0
   won: 0
+  hasMagnet: 0
+  hasReleased: 0
+  hitEnemyOrSpike: 
