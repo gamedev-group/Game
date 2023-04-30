@@ -12,7 +12,14 @@ public class FirstLevel : MonoBehaviour
 
         if(changeTime <= 0)
         {
-            GameManager.instance.IncreaseLevel(); 
+            if(GameManager.instance.currentLevel == 0)
+            {
+                GameManager.instance.IncreaseLevel(); 
+            }
+            else if(GameManager.instance.currentLevel == GameManager.instance.maxLevel)
+            {
+                SceneManager.LoadScene("MainMenu"); 
+            }
         }
     }
 }
