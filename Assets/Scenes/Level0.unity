@@ -2292,7 +2292,7 @@ GameObject:
   - component: {fileID: 1565718576}
   - component: {fileID: 1565718575}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SwitchScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
