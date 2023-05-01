@@ -596,8 +596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66, y: -81}
-  m_SizeDelta: {x: 2333.62, y: 919.1}
+  m_AnchoredPosition: {x: 71.42, y: -137.94}
+  m_SizeDelta: {x: 2344.47, y: 1032.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704145774
 MonoBehaviour:
@@ -634,7 +634,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Khaled Korfali: Art, Business, Programming\nVictor Phan: Art, Design,
     Programming \nLuke Lewis: Q/A, Art, Programming \nSerly Teymoorian: Project Management,
-    \n                         Sound, Programming \nAmogh Prakash: Design, Programming "
+    \n                         Sound, Programming \nAmogh Prakash: Design, Programming
+    \n\nSound effects --> www.pixabay.com"
 --- !u!222 &704145775
 CanvasRenderer:
   m_ObjectHideFlags: 0
