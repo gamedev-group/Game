@@ -44,6 +44,11 @@ public class PauseMenuController : MonoBehaviour
     //purpose: resume the level that was paused 
     public void ResumeGame()
     {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+        
         pauseMenu.SetActive(false); 
         Time.timeScale = 1f; 
         isGamePaused = false; 
