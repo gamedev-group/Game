@@ -49,11 +49,18 @@ public class FreezeRayController : MonoBehaviour
                 if (enemy.TryGetComponent<PatrollBehavior>(out PatrollBehavior pB)) {
                     pB.enabled = false;
                 }
+                if (enemy.TryGetComponent<MoveBackForth>(out MoveBackForth mBF)) {
+                    mBF.enabled = false;
+                }
                 if (enemy.TryGetComponent<Animator>(out Animator animator)) {
                     animator.enabled = false;
                 }
-                Destroy(enemy.GetComponent<DoesDamage>());
-                Destroy(enemy.GetComponent<Rigidbody2D>());
+                if (enemy.TryGetComponent<DoesDamage>(out DoesDamage dD)){ 
+                    dD.enabled = false;
+                }
+                if (enemy.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)) {
+                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                }
             }
 
             Vector3 hitPointPos = new Vector3(hitInfo.point.x, hitInfo.point.y, 0f);
