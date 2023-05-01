@@ -1935,6 +1935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 6043139020560727841}
+  itemPlacerUI: {fileID: 7795148041692388759}
 --- !u!114 &6043139021213848679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class PauseMenuController : MonoBehaviour
 {
     public static bool isGamePaused = false; 
     public GameObject pauseMenu; 
+    public GameObject itemPlacerUI; 
 
     void Awake()
     {
@@ -26,6 +27,16 @@ public class PauseMenuController : MonoBehaviour
             {
                 PauseGame(); 
             }
+        }
+
+        //when the game is paused, hide the item display 
+        if(isGamePaused)
+        {
+            itemPlacerUI.SetActive(false);
+        }
+        else
+        {
+            itemPlacerUI.SetActive(true); 
         }
     }
 
