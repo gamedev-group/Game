@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964128, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 6043139020465943127, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -674.7623
+      value: -674.9411
       objectReference: {fileID: 0}
     - target: {fileID: 6043139020560727841, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
@@ -600,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 6043139020713505489, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -404.85742
+      value: -404.96466
       objectReference: {fileID: 0}
     - target: {fileID: 6043139020715168454, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
@@ -620,7 +620,7 @@ PrefabInstance:
     - target: {fileID: 6043139020715168454, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1032.1672
+      value: -1032.4175
       objectReference: {fileID: 0}
     - target: {fileID: 6043139020989720246, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
@@ -640,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 6043139020989720246, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -47.45247
+      value: -47.48822
       objectReference: {fileID: 0}
     - target: {fileID: 6043139021213848673, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
@@ -751,6 +751,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434842052743352263, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434842053954257518, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48884c4a576d14b8c8aa4e875ee1b41c, type: 3}
@@ -11331,7 +11341,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: a05e29ec9cd05444899f061d9485fd73,
+      objectReference: {fileID: 24300002, guid: 4a96b04b800634076bfd996450f6d837,
         type: 2}
     - target: {fileID: 6109323186874398593, guid: 8f8b6a7c503724227add74c120e3b689,
         type: 3}
