@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8134,16 +8134,46 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 644054180457454338, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -724
+      objectReference: {fileID: 0}
+    - target: {fileID: 644054180457454338, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -229
+      objectReference: {fileID: 0}
     - target: {fileID: 644054180747013412, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878140240946299173, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -723
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878140240946299173, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -424
       objectReference: {fileID: 0}
     - target: {fileID: 1878140242347724570, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: obj
       value: 
       objectReference: {fileID: 274545823}
+    - target: {fileID: 3958356515845190225, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 205
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958356515845190225, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6043139020465943127, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -8334,6 +8364,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6372087900110453815, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372087900110453815, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372087900110453815, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372087900110453815, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6743767045593656440, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8343,6 +8393,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434842052478974433, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434842052743352263, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434842053954257518, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872149121006853393, guid: 48884c4a576d14b8c8aa4e875ee1b41c,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48884c4a576d14b8c8aa4e875ee1b41c, type: 3}
