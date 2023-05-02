@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Magnet
   m_EditorClassIdentifier: 
   itemName: Magnet
-  prefab: {fileID: 676301807779526839, guid: 714f5974073694bc49f5a9da83840d78, type: 3}
+  prefab: {fileID: 1575490702879020922, guid: fe6c75e3cf0d9024bba3adb7e75f9400, type: 3}
   icon: {fileID: 21300000, guid: c2976dc12c76485459a2ba8a646c8efa, type: 3}
   requiresGround: 0

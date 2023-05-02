@@ -14,6 +14,7 @@ TagManager:
   - FlyingEnemy
   - Magnet
   - Block
+  - Magnetizable
   layers:
   - Default
   - TransparentFX

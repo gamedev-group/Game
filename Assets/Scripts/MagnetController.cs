@@ -18,7 +18,7 @@ public class MagnetController : MonoBehaviour
             //if the object is a Ramp, then destory its Rigidbody2D
             if(collision.gameObject.tag == "Ramp" && collision.gameObject.GetComponent<Rigidbody2D>() != null)
             {
-                Destroy(collision.gameObject.GetComponent<Rigidbody2D>()); 
+                collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
         else if(collision.gameObject.TryGetComponent<Block>(out Block block) && GameManager.instance.hasMagnet == true )
