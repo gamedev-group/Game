@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/***************************************************************
+*file: GameManager.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: control the levels of the game and save the state of the game 
+*
+****************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        //singleton design pattern 
         if(instance == null)
         {
             instance = this; 

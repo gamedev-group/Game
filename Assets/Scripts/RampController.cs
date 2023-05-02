@@ -6,6 +6,8 @@ public class RampController : MonoBehaviour
 {
     public float speedBoost = 2f;
 
+    //function: OnCollisionEnter2D
+    //purpose: detect collision with the ramp
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")

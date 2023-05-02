@@ -1,3 +1,12 @@
+/***************************************************************
+*file: UIController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Controll the user interface with listening to button clicks 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

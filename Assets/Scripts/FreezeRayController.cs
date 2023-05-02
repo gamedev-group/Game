@@ -1,3 +1,12 @@
+/***************************************************************
+*file: FreezeRayController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: hold the freeze ray gadget of the game 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +36,6 @@ public class FreezeRayController : MonoBehaviour
         
         //play the sound effect 
         SoundManagerController.PlaySoundEffect("freezeray"); 
-        
         //wait to play the sound effect 
         System.Threading.Thread.Sleep(10);
 

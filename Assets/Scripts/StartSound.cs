@@ -1,3 +1,12 @@
+/***************************************************************
+*file: StartSound.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Starting the sound from the first frame 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +20,7 @@ public class StartSound : MonoBehaviour
     void Start()
     {
         s1 = GetComponent<AudioSource>(); 
+        //play the sound 
         s1.Play(); 
     }
 }

@@ -1,3 +1,12 @@
+/***************************************************************
+*file: LevelSelectorController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: handle the level select scene to select the level and swicth to the level's scene 
+*
+****************************************************************/
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;

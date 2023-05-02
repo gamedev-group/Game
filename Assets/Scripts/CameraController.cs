@@ -1,3 +1,12 @@
+/***************************************************************
+*file: CameraController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: handle the camera control 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,6 +55,8 @@ public class CameraController : MonoBehaviour
         transform.position = new Vector3(newPos.x, newPos.y, -10); //z is -10 in order to capture all other sprites, which are at z = 0.
     }
 
+    //function: OnDrawGizmos
+    //purpose: have boundaries for th ecamera in all 4 directions 
     private void OnDrawGizmos() {
         if (leftBoundaryTransform == null || rightBoundaryTransform == null || upBoundaryTransform == null || downBoundaryTransform == null)
             return;

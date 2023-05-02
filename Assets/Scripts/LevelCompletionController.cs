@@ -1,3 +1,12 @@
+/***************************************************************
+*file: LevelCompletionController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: handle the level completion and show it on screen when a level is completed 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +16,7 @@ using UnityEngine.SceneManagement;
 public class LevelCompletionController : MonoBehaviour
 {
     public LevelCompletionTextDisplayController levelCompletionText; 
-
     public LevelCompletionTextDisplayController levelTime; 
-
     public GameObject levPanel;
 
     void Awake()
@@ -20,6 +27,7 @@ public class LevelCompletionController : MonoBehaviour
 
     void Update()
     {
+        //if the level is completed, show the level completion screen 
         if(GameManager.instance.won)
         {
             ShowLevelCompletion();

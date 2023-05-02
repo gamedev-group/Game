@@ -1,3 +1,12 @@
+/***************************************************************
+*file: PatrollBehavior.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Handle the movement of the enemy which is in a specific pattern set by the developer as they are parameters
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,6 +74,5 @@ public class PatrollBehavior : MonoBehaviour
         {
             positionIndex = 0;
         }
-         //transform.Rotate(0,0,-90);
     }
 }

@@ -1,3 +1,12 @@
+/***************************************************************
+*file: DoesDamage.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: handle the damage by the enemies and spikes 
+*
+****************************************************************/
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +21,8 @@ public class DoesDamage : MonoBehaviour
         throw new NotImplementedException();
     }
 
+    //function: OnCollisionEnter2D
+    //purpose: detect collision with the enemies and spikes 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //enemy gets into contact with player  

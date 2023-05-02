@@ -1,3 +1,12 @@
+/***************************************************************
+*file: SoundManagerController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Getting the audio clips for SFX and playing them based on the input value as the function is static 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,12 @@
+/***************************************************************
+*file: MoveBackForth.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: set the right and left limits to move in that boundary 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +22,7 @@ public class MoveBackForth : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        //get the right and left positions 
         leftEnd = leftPoint.position.x;
         rightEnd = rightPoint.position.x;
     }
