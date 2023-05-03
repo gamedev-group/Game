@@ -1,3 +1,12 @@
+/***************************************************************
+*file: MixerController2.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: handle the volume slider to save the value 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

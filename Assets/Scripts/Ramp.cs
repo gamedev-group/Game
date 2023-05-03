@@ -33,7 +33,7 @@ public class Ramp: MonoBehaviour
         targetPos = pos;
         hasTarget = check; 
     }
-
+    
     public void SetHasTarget(bool check)
     {
         hasTarget = check; 
