@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19584,40 +19584,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2330792169272325665, guid: 567fbcce22158334b8408903f31336c8,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2330792169272325665, guid: 567fbcce22158334b8408903f31336c8,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2330792169272325665, guid: 567fbcce22158334b8408903f31336c8,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2330792169272325693, guid: 567fbcce22158334b8408903f31336c8,
         type: 3}
       propertyPath: m_Name
       value: Metal Block
       objectReference: {fileID: 0}
-    - target: {fileID: 2330792169272325694, guid: 567fbcce22158334b8408903f31336c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c325b84ba52ce174eb6206832beb0e8c,
-        type: 3}
     - target: {fileID: 2330792169272325695, guid: 567fbcce22158334b8408903f31336c8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2330792169272325695, guid: 567fbcce22158334b8408903f31336c8,
-        type: 3}
-      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2330792169272325695, guid: 567fbcce22158334b8408903f31336c8,

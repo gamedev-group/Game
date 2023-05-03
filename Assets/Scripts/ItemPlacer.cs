@@ -74,7 +74,7 @@ public class ItemPlacer : MonoBehaviour
             bool canPlace = (hit.collider != null && hit.normal.Equals(Vector2.up));
             bool needsToPlace = selected.requiresGround;
             GameObject spawnedObj;
-            if (canPlace  && objectDictionary[selected] != 0)
+            if (canPlace && objectDictionary[selected] != 0)
             {
                 if(selected.itemName == "Plank")
                 {
@@ -90,9 +90,11 @@ public class ItemPlacer : MonoBehaviour
                 {
                     spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
                     //if we are facing to the left, rotate the object 180 degrees on the y to reverse its direction.
-                    if (transform.rotation.eulerAngles.y == 180)
+                    if (((int)transform.rotation.eulerAngles.y) == 180)
                     {
                         spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                    } else {
+                        print(transform.rotation.eulerAngles.y);
                     }
                 }
                 

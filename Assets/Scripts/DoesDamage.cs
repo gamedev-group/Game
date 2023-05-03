@@ -15,7 +15,7 @@ public class DoesDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //enemy gets into contact with player  
-        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth) && this.gameObject.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth) && (this.gameObject.CompareTag("Enemy") || this.gameObject.CompareTag("FlyingEnemy")))
         {
             GameManager.instance.hitEnemyOrSpike = "Enemy"; 
             //pass in the damage to the player 

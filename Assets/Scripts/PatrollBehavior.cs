@@ -67,4 +67,13 @@ public class PatrollBehavior : MonoBehaviour
         }
          //transform.Rotate(0,0,-90);
     }
+
+    public void OnDrawGizmosSelected(){
+        float baseSize = 0.5f;
+        float sizeOffset = 0.1f;
+
+        for (int i = 0; i<positions.Length; i++) {
+            Gizmos.DrawSphere(positions[i], baseSize-(i*sizeOffset));
+        }
+    }
 }
