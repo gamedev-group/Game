@@ -3,8 +3,9 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: control the levels of the game and save the state of the game 
+*purpose: Control the levels of the game and save the state of the game 
 *
 ****************************************************************/
 using System.Collections;
@@ -14,34 +15,45 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null; 
+    // singleton design pattern: only one GameManager instance exists at any given time
+    public static GameManager instance = null;
+   
+    // the number of levels in the game
     public int maxLevel = 11;
-    public int currentLevel = 0; 
+    // the current level the player is on
+    public int currentLevel = 0;
 
-    public float levelStartTime; 
-    public float levelEndTime; 
-    public float totalTime; 
+    // the start time of the current level
+    public float levelStartTime;
+    // the end time of the current level
+    public float levelEndTime;
+    // the total time the player spent on the current level
+    public float totalTime;
 
-    public bool won = false; 
+    // whether or not the player has won the game
+    public bool won = false;
 
-    public bool hasMagnet = false; 
-    public bool hasReleased = false; 
-    public string hitEnemyOrSpike; 
+    // whether or not the player has collected the magnet power-up
+    public bool hasMagnet = false;
+    // whether or not the player has released the magnet power-up
+    public bool hasReleased = false;
+    // whether or not the player has hit an enemy or a spike
+    public string hitEnemyOrSpike;
 
     void Awake()
     {
-        //singleton design pattern 
-        if(instance == null)
+        // if no GameManager instance exists, set it to this instance
+        if (instance == null)
         {
             instance = this; 
         }
         else if(instance !=this)
         {
-            //so we will have only 1 manager 
+            // if another GameManager instance exists, destroy this instance
             Destroy(gameObject); 
         }
 
-        //Don't destroy the object when loading the scenes to not lose information about the game (like levels or score)
+        // Don't destroy the GameManager object when loading scenes to preserve game state (like levels and score)
         DontDestroyOnLoad(gameObject);
     }
     
@@ -84,7 +96,8 @@ public class GameManager : MonoBehaviour
     }
 
     //function: IncreaseLevel 
-    //purpose: move to the next level (next scene)
+    //purpose: his function is called when the player has completed
+    //the current level and it is time to move to the next level (next scene).
     public void IncreaseLevel()
     {
         if(currentLevel < maxLevel)
@@ -94,18 +107,24 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            // if the player has completed the last level, restart at level 1
             currentLevel = 1;
         }
 
         //load the corresponding level (scene)
         SceneManager.LoadScene("Level" + currentLevel); 
-    } 
+    }
 
+    //function: TotalTime
+    //purpose: Calculates the total time that has passed since the start and
+    //end of the level
     public float TotalTime()
     {
         return (levelEndTime - levelStartTime); 
     }
 
+    //function: ExitGame
+    //purpose: Quits out of the game
     public void ExitGame()
     {
         Application.Quit();
@@ -119,7 +138,7 @@ public class GameManager : MonoBehaviour
         SoundManagerController.PlaySoundEffect("buttonclick"); 
         //wait a little before changing the scene 
         System.Threading.Thread.Sleep(500);
-        
+        // Load credits scene
         SceneManager.LoadScene("Credits"); 
     }
 
@@ -131,7 +150,7 @@ public class GameManager : MonoBehaviour
         SoundManagerController.PlaySoundEffect("buttonclick"); 
         //wait a little before changing the scene 
         System.Threading.Thread.Sleep(500);
-
+        // Loads the Main Menu
         SceneManager.LoadScene("MainMenu"); 
     }
 }

@@ -3,8 +3,11 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: handle the change scene for the cut scenes 
+*purpose: This script handles the time control and scene transition during cutscenes.
+*It calculates the elapsed time for a cutscene and advances to the next scene when the time has run out.
+*It also determines whether the next scene is the main menu or the next level.
 *
 ****************************************************************/
 using System.Collections;
@@ -14,22 +17,25 @@ using UnityEngine.SceneManagement;
 
 public class FirstLevel : MonoBehaviour
 {
-    public float changeTime; 
+    public float changeTime; // the duration of the cutscene
+
+    //Function:Update
+    //Purpose: Update is colled once per frame
     void Update()
     {
-        //calculate the time passed from the start of the cut scene 
+        // Calculate the time remaining for the cutscene
         changeTime -= Time.deltaTime;
 
-        //if it reached 0 then 
-        if(changeTime <= 0)
+        // Check if the cutscene has ended
+        if (changeTime <= 0)
         {
-            //increase the level to 1 if the current cut scene is the intro one 
-            if(GameManager.instance.currentLevel == 0)
+            // If the current cutscene is the intro, advance to level 1
+            if (GameManager.instance.currentLevel == 0)
             {
                 GameManager.instance.IncreaseLevel(); 
             }
-            //change it to main menu scene if the current cut scene is the last cut scene 
-            else if(GameManager.instance.currentLevel == GameManager.instance.maxLevel)
+            // If the current cutscene is the last one, go back to the main menu
+            else if (GameManager.instance.currentLevel == GameManager.instance.maxLevel)
             {
                 SceneManager.LoadScene("MainMenu"); 
             }

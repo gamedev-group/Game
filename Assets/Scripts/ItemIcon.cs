@@ -3,8 +3,10 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: Handle the view of each item's icon 
+*purpose: This script is responsible for managing the visual display of each item's icon, including
+*the image of the item, the quantity of the item, and whether or not the item is currently selected. 
 *
 ****************************************************************/
 using System.Collections;
@@ -15,10 +17,12 @@ using TMPro;
 
 public class ItemIcon : MonoBehaviour
 {
-    public Image itemDisplay;
-    public TextMeshProUGUI quantityDisplay;
-    public Image selectedBackground;
+    public Image itemDisplay; // Reference to the image component for the item
+    public TextMeshProUGUI quantityDisplay; // Reference to the TextMeshProUGUI component for the quantity of the item
+    public Image selectedBackground; // Reference to the image component for the selected background of the icon
 
+    //function:OnEnable
+    //purpose: Deselect the background when the icon is enabled
     void OnEnable() {
         DeselectBackground();
     }

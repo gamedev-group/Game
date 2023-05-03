@@ -3,8 +3,10 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: displaying or hiding the sound icon based on number of clicks 
+*purpose: This script is responsible for playing or hiding the
+*sound icon based on number of clicks 
 *
 ****************************************************************/
 using System.Collections;
@@ -13,23 +15,30 @@ using UnityEngine;
 
 public class SoundIconController : MonoBehaviour
 {
-    public GameObject obj; 
+    // reference to the game object that contains the sound slider
+    public GameObject obj;
 
-    private static int countClick = 0; 
+    // counter to keep track of the number of times the sound icon is clicked
+    private static int countClick = 0;
+
 
     //function: SoundButtonClicked
-    //purpose: when the sound icon is clicked, we show the slider to manage the sound  
+    //purpose: This function is called when the sound icon is clicked, and it shows or hides the sound slider based on the number of clicks.
     public void SoundButtonClicked()
     {
+        // increment the countClick counter
         ++countClick;
-        if(countClick % 2 != 0)
+        // if the countClick is odd, show the sound slider
+        if (countClick % 2 != 0)
         {
-            obj.SetActive(true); 
+            obj.SetActive(true);
         }
+        // if the countClick is even, hide the sound slider
         else
-        {   
-            obj.SetActive(false); 
+        {
+            obj.SetActive(false);
         }
-        print(countClick); 
+        // print the countClick value for debugging purposes
+        print(countClick);
     }
 }

@@ -3,8 +3,10 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: Controll the user interface with listening to button clicks 
+*purpose: This script is responsible for controlling the UI buttons
+*in the game. Each button has its own function to be called when clicked on.
 *
 ****************************************************************/
 using System.Collections;
@@ -14,35 +16,36 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     //function: StartButtonClicked
-    //purpose: start button is clicked on the scene, load level 1 
+    //purpose: This function is called when the start button is clicked on the scene. It calls the StartGame function from the GameManager instance.
     public void StartButtonClicked()
     {
         GameManager.instance.StartGame(); 
     }
 
     //function: ContinueButtonClicked
-    //purpose: continue button is clicked on the scene, load the last saved level 
+    //purpose: This function is called when the continue button is clicked on the scene. It calls the ContinueGame function from the GameManager instance.
+
     public void ContinueButtonClicked()
     {
         GameManager.instance.ContinueGame(); 
     }
 
     //function: ExitButtonClicked
-    //purpose: exit the game 
+    //purpose: This function is called when the exit button is clicked on the scene. It calls the ExitGame function from the GameManager instance.
     public void ExitButtonClicked()
     {
         GameManager.instance.ExitGame(); 
     }
 
     //function: CreditsButtonClicked
-    //purpose: display the credits 
+    //purpose: This function is called when the credits button is clicked on the scene. It calls the Credits function from the GameManager instance.
     public void CreditsButtonClicked()
     {
         GameManager.instance.Credits(); 
     }
 
     //function: BackButtonClicked
-    //purpose: go back to main menu 
+    //purpose: This function is called when the back button is clicked on the scene. It calls the Back function from the GameManager instance.
     public void BackButtonClicked()
     {
         GameManager.instance.Back(); 

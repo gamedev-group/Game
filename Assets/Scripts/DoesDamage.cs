@@ -3,8 +3,10 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: handle the damage by the enemies and spikes 
+*purpose:  This script is responsible for handling damage to 
+*the player caused by enemies or spikes.
 *
 ****************************************************************/
 using System;
@@ -14,8 +16,10 @@ using UnityEngine;
 
 public class DoesDamage : MonoBehaviour
 {
+    // the amount of damage caused by the object
     public int contactDamage = 1;
 
+    //method from Unity's API to avoid compile errors when inheriting from MonoBehaviour
     internal bool TryGetComponent<T>(out object rb)
     {
         throw new NotImplementedException();
@@ -25,27 +29,24 @@ public class DoesDamage : MonoBehaviour
     //purpose: detect collision with the enemies and spikes 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //enemy gets into contact with player  
-        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth) && (this.gameObject.CompareTag("Enemy") || this.gameObject.CompareTag("FlyingEnemy")))
+        // check if the object collided with the player and is an enemy or flying enemy
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth) && (this.gameObject.CompareTag("Enemy") || this.gameObject.CompareTag("FlyingEnemy")))
         {
-            GameManager.instance.hitEnemyOrSpike = "Enemy"; 
-            //pass in the damage to the player 
-            playerHealth.TakeDamage(this.contactDamage); 
+            GameManager.instance.hitEnemyOrSpike = "Enemy"; // set the game manager variable to 'Enemy'
+            playerHealth.TakeDamage(this.contactDamage); // pass the damage amount to the player's health script
         }
 
-        //enemy gets into contact with spike
+        // check if the object collided with a spike and is an enemy
         if (collision.gameObject.CompareTag("Spike") && this.gameObject.CompareTag("Enemy"))
         {
-            //pass in the damage to the player 
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // destroy the enemy object
         }
 
-        //Player gets into contact with spike
+        // check if the object collided with the player and is a spike
         if (collision.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Spike") && collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth2))
         {
-            GameManager.instance.hitEnemyOrSpike = "Spike"; 
-            //pass in the damage to the player 
-            playerHealth2.TakeDamage(this.contactDamage); 
+            GameManager.instance.hitEnemyOrSpike = "Spike"; // set the game manager variable to 'Spike'
+            playerHealth2.TakeDamage(this.contactDamage); // pass the damage amount to the player's health script
         }
     }
 }

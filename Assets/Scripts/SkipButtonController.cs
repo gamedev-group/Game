@@ -3,6 +3,7 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
 *purpose: handle the event when the skip button is pressed based on the current level 
 *

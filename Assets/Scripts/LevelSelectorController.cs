@@ -3,6 +3,7 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
 *purpose: handle the level select scene to select the level and swicth to the level's scene 
 *
@@ -13,12 +14,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectorController : MonoBehaviour
 {
-    public int level;
-    public Text levelText;
+    public int level; //the level number of the button
+    public Text levelText; //the text object displaying the level number
 
-    // Start is called before the first frame update
+    //function: Start
+    //Purpose:Start is called before the first frame update
     void Start()
     {
+        //display the level number on the button text
         levelText.text = level.ToString();
     }
 
@@ -28,6 +31,7 @@ public class LevelSelectorController : MonoBehaviour
     {
         //set the current level to the level selected 
         GameManager.instance.currentLevel = level; // comment out when testing specific levels
+        
         //open the corresponding level scene 
         print(level.ToString());
 
@@ -36,9 +40,11 @@ public class LevelSelectorController : MonoBehaviour
 
         //sound effect of button click 
         SoundManagerController.PlaySoundEffect("buttonclick"); 
+        
         //wait a little before changing the scene 
         System.Threading.Thread.Sleep(500);
 
+        // Load the selected level
         SceneManager.LoadScene("Level" + level.ToString());
     }
 }

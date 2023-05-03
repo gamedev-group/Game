@@ -3,6 +3,7 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
 *purpose: Handle the pause menu when the player pasues the game and the buttons on the menu 
 *
@@ -14,22 +15,31 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
-    public static bool isGamePaused = false; 
-    public GameObject pauseMenu; 
-    public GameObject itemPlacerUI; 
+    // A static variable to check if the game is paused
+    public static bool isGamePaused = false;
+    
+    // A game object that represents the pause menu UI
+    public GameObject pauseMenu;
 
+    // A game object that represents the item placer UI
+    public GameObject itemPlacerUI;
+
+    ///Function:Awake
+    //purpose:Awake is called when the script instance is being loaded
     void Awake()
     {
         //initially the pause menu is not shown 
         pauseMenu.SetActive(false); 
     }
 
-    // Update is called once per frame
+    //Function:Update
+    //Purpose:Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        // Check if the player presses the escape key
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //check the status of the game
+            // If the game is paused, resume it; otherwise, pause it
             if(isGamePaused)
             {
                 ResumeGame(); 
@@ -40,8 +50,8 @@ public class PauseMenuController : MonoBehaviour
             }
         }
 
-        //when the game is paused, hide the item display 
-        if(isGamePaused)
+        // When the game is paused, hide the item placer UI; otherwise, show it
+        if (isGamePaused)
         {
             itemPlacerUI.SetActive(false);
         }
@@ -55,63 +65,86 @@ public class PauseMenuController : MonoBehaviour
     //purpose: resume the level that was paused 
     public void ResumeGame()
     {
-        //sound effect of button click 
-        SoundManagerController.PlaySoundEffect("buttonclick"); 
-        //wait a little before changing the scene 
+        // Play a sound effect when the button is clicked
+        SoundManagerController.PlaySoundEffect("buttonclick");
+
+        // Wait for a little while before changing the scene to give time for the sound effect to play
         System.Threading.Thread.Sleep(500);
-        
-        pauseMenu.SetActive(false); 
-        Time.timeScale = 1f; 
-        isGamePaused = false; 
+
+        // Hide the pause menu UI
+        pauseMenu.SetActive(false);
+
+        // Resume the time scale to normal speed
+        Time.timeScale = 1f;
+
+        // The game is not paused anymore
+        isGamePaused = false;
     }
 
     //function: PauseGame
     //purpose: pause the current level of the game 
     public void PauseGame()
     {
+        // Show the pause menu UI
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f; 
-        isGamePaused = true; 
+
+        // Freeze the time scale to pause the game
+        Time.timeScale = 0f;
+
+        // The game is now paused
+        isGamePaused = true;
     }
 
     //function: MenuButtonClicked
     //purpose: go back to main menu 
     public void MenuButtonClicked()
     {
-        //sound effect of button click 
-        SoundManagerController.PlaySoundEffect("buttonclick"); 
-        //wait a little before changing the scene 
+        // Play a sound effect when the button is clicked
+        SoundManagerController.PlaySoundEffect("buttonclick");
+
+        // Wait for a little while before changing the scene to give time for the sound effect to play
         System.Threading.Thread.Sleep(500);
 
-        GameManager.instance.levelStartTime = 0f; 
+        // Reset the level start time to 0
+        GameManager.instance.levelStartTime = 0f;
 
-        SceneManager.LoadScene("MainMenu"); 
+        // Load the main menu scene
+        SceneManager.LoadScene("MainMenu");
 
-        Time.timeScale = 1f; 
+        // Resume the time scale to normal speed
+        Time.timeScale = 1f;
     }
 
     //function: QuitButtonClicked
     //purpose: quit the entire game 
     public void QuitButtonClicked()
     {
-        //sound effect of button click 
-        SoundManagerController.PlaySoundEffect("buttonclick"); 
-        //wait a little before changing the scene 
+        // Play a sound effect when the button is clicked
+        SoundManagerController.PlaySoundEffect("buttonclick");
+
+        // Wait for a little while before quitting to give time for the sound effect to play
         System.Threading.Thread.Sleep(500);
 
-        Application.Quit(); 
+        // Quit the application
+        Application.Quit();
     }
 
     //function: ResetLevel
-    //purpose: start over the current level of the game 
+    //purpose:  Reset the current level of the game to its initial state 
     public void ResetLevel()
     {
-        //sound effect of button click 
-        SoundManagerController.PlaySoundEffect("buttonclick"); 
-        //wait a little before changing the scene 
+        // Play a button click sound effect to provide audio feedback to the player
+        SoundManagerController.PlaySoundEffect("buttonclick");
+        // Wait for a short period of time before resetting the level
+        // This is done to ensure that the button click sound effect is played before
+        // the scene changes
         System.Threading.Thread.Sleep(500);
-        
-        GameManager.instance.ResetLevel(); 
+
+        // Call the ResetLevel() function of the GameManager instance to reset the current level
+        GameManager.instance.ResetLevel();
+
+        // Resume the game by setting the time scale to 1
+        // This ensures that the game continues running normally after the level is reset
         Time.timeScale = 1f; 
     }
 }

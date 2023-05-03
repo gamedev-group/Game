@@ -2,9 +2,11 @@
 *file: MixerController2.cs
 *author: Group
 *class: CS 4700- Game Development
-*assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: handle the volume slider to save the value 
+*purpose: The purpose of the script is to handle the volume
+*slider and set the volume of the audio mixer based on the value
+*of the slider. 
 *
 ****************************************************************/
 using System.Collections;
@@ -14,8 +16,11 @@ using UnityEngine.Audio;
 
 public class MixerController2 : MonoBehaviour
 {
-    public AudioMixer audioMixer; 
+    // Refrence to an audio mixer object
+    public AudioMixer audioMixer;
 
+    //Function:Awake
+    //purpose:Awake is called when the script instance is being loaded
     void Awake()
     {
         //initially the volume slider is not shown 

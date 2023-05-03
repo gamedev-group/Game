@@ -3,6 +3,7 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
 *purpose: Attatch to the flag to detect when the player is completing a level 
 *

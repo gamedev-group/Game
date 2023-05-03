@@ -3,8 +3,11 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: Getting the audio clips for SFX and playing them based on the input value as the function is static 
+*purpose:This script is responsible for managing sound effects in the game.
+*It contains audio clips for various sound effects and a static function that
+*plays different sound effects based on the input parameter.
 *
 ****************************************************************/
 using System.Collections;
@@ -23,8 +26,11 @@ public class SoundManagerController : MonoBehaviour
     public static AudioClip enemyHitSoundEffect;
     public static AudioClip plankSoundEffect;
     public static AudioClip magnetSoundEffect;
-    public static AudioClip freezeRaySoundEffect; 
+    public static AudioClip freezeRaySoundEffect;
 
+    //function: Awake
+    //purpose: This function is called when the script instance is
+    //being loaded and gets audio clips for sound effects
     void Awake()
     {
         springSounfEffect = Resources.Load<AudioClip>("springsound"); 
@@ -41,9 +47,9 @@ public class SoundManagerController : MonoBehaviour
     //function: PlaySoundEffect
     //purpose: play different sound effects based on the parameter 
     public static void PlaySoundEffect(string clip)
-    {   
-    //check to see which sound effect is requested by the action then play the corresponding one 
-        if(clip == "spring")
+    {
+        //check to see which sound effect is requested by the action then play the corresponding one 
+        if (clip == "spring")
         {
             audioSrc.PlayOneShot(springSounfEffect); 
         }

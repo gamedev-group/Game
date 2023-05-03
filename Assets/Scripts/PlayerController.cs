@@ -3,8 +3,9 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: Control the player's object movements and its orientation 
+*purpose: Responsible for player movement and character sound
 *
 ****************************************************************/
 using System.Collections;
@@ -21,13 +22,16 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private bool facingRight = true;
     
-
+    //function:Start
+    //purpose:called on the first frame
     void Start()
     {
         // Get the Rigidbody2D component on the player object
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    //Function:Update
+    //Purpose:Update is called once per frame
     void Update()
     {    
         //handle the walking of the player 
@@ -41,7 +45,7 @@ public class PlayerController : MonoBehaviour
     
     //function: WalkHandler 
     //purpose: this function controls the players walking motion which is to the left or right in the x direction 
-    //      control this by the arrow keys on the keyboard 
+    //control this by the arrow keys on the keyboard 
     void WalkHandler()
     {
         // Get the horizontal input from the arrow keys or A and D keys
@@ -56,7 +60,8 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
         }
 
-        if(inputAxis != 0)
+        // Play wheelchair sound if player is moving, stop if they're not
+        if (inputAxis != 0)
         {
             wheelchairSound.enabled = true; 
         }

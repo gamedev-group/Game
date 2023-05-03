@@ -3,8 +3,10 @@
 *author: Group
 *class: CS 4700- Game Development
 *assignment: Program 4
+*date last modified: 5/03/2023
 *
-*purpose: Handle the movement of the enemy which is in a specific pattern set by the developer as they are parameters
+*purpose: Handle the movement of the enemy which is in a specific
+*pattern set by the developer as they are parameters
 *
 ****************************************************************/
 using System.Collections;
@@ -30,13 +32,15 @@ public class PatrollBehavior : MonoBehaviour
 
     private int positionIndex;
 
-    // Start is called before the first frame update
+    //function:Start
+    //purpose: Start is called before the first frame update
     void Start()
     {
         positionIndex = 1;
     }
 
-    // Update is called once per frame
+    //Function:Update
+    //Purpose:Update is called once per frame
     void Update()
     {
         MoveToardsNextPosition();
@@ -50,7 +54,10 @@ public class PatrollBehavior : MonoBehaviour
     //purpose: go towards the next position set 
     void MoveToardsNextPosition()
     {
+        // Set the next position as the target position
         Vector2 targetPosition = positions[positionIndex];
+
+        // Move the object towards the target position at the specified movementSpeed
         gameObject.transform.position = Vector2.MoveTowards(
                 gameObject.transform.position,
                 targetPosition,
@@ -61,7 +68,10 @@ public class PatrollBehavior : MonoBehaviour
     //purpose: check if the position of the enemy is within the range then return true or false 
     bool IsWithinRangeOfTarget()
     {
+        // Set the next position as the target position
         Vector2 targetPosition = positions[positionIndex];
+
+        // Return true if the distance to the target is less than the stopping distance, otherwise return false
         return Vector2.Distance(gameObject.transform.position, targetPosition) < stoppingDistance;
     }
 
@@ -69,18 +79,24 @@ public class PatrollBehavior : MonoBehaviour
     //purpose: increasing the index based on the minimum and maximum positions 
     void IncrementTargetIndex()
     {
+        // Increment the position index by 1
         positionIndex += 1;
+
+        // If the position index is equal to the length of the positions array, set it back to 0 to loop
         if (positionIndex == positions.Length )
         {
             positionIndex = 0;
         }
     }
 
+    //function: OnDrawGizmosSelected
+    //purpose: Draws a sphere at each point in the positions array to help visualize the patrol path in the editor
     public void OnDrawGizmosSelected(){
-        float baseSize = 0.5f;
-        float sizeOffset = 0.1f;
-
+        float baseSize = 0.5f;// Set the base size of the sphere to be drawn
+        float sizeOffset = 0.1f;// Set the size offset between each sphere
+        // Loop through each position in the positions array
         for (int i = 0; i<positions.Length; i++) {
+            // Draw a sphere at the ith position in the positions array with a size that decreases based on its index
             Gizmos.DrawSphere(positions[i], baseSize-(i*sizeOffset));
         }
     }
