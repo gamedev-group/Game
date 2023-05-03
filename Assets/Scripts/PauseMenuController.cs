@@ -1,3 +1,12 @@
+/***************************************************************
+*file: PauseMenuController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Handle the pause menu when the player pasues the game and the buttons on the menu 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +20,7 @@ public class PauseMenuController : MonoBehaviour
 
     void Awake()
     {
+        //initially the pause menu is not shown 
         pauseMenu.SetActive(false); 
     }
 
@@ -19,6 +29,7 @@ public class PauseMenuController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            //check the status of the game
             if(isGamePaused)
             {
                 ResumeGame(); 

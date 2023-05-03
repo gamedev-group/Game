@@ -1,3 +1,12 @@
+/***************************************************************
+*file: PlayerHealth.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: determine the health of the player to see if the player can continue the level or the level is reset based on the damages
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

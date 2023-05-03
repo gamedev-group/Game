@@ -1,3 +1,12 @@
+/***************************************************************
+*file: SoundIcon.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: displaying or hiding the sound icon based on number of clicks 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

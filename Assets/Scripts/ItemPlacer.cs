@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/***************************************************************
+*file: ItemPLacer.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Place the item when the player selects the item 
+*
+****************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -67,6 +76,7 @@ public class ItemPlacer : MonoBehaviour
             print("Selected: " + selected.itemName);
         }
 
+        // pres spacebar to activate the item 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //shoot a raycast downwards in front of the player towards the ground 
@@ -102,6 +112,7 @@ public class ItemPlacer : MonoBehaviour
                 itemUsed(selected, objectDictionary[selected]);
             }
             else if (!needsToPlace  && objectDictionary[selected] != 0) {
+                //check if the selected item is freeze ray or magnet ray 
                 if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
                 {
                     spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
@@ -120,6 +131,7 @@ public class ItemPlacer : MonoBehaviour
                     
                 }
 
+                //remove the object 
                 objectDictionary[selected]--;
                 itemUsed(selected, objectDictionary[selected]);
             }

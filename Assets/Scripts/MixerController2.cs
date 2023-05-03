@@ -9,6 +9,7 @@ public class MixerController2 : MonoBehaviour
 
     void Awake()
     {
+        //initially the volume slider is not shown 
        gameObject.SetActive(false); 
     }
 

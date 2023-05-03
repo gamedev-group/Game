@@ -1,3 +1,12 @@
+/***************************************************************
+*file: SkipButtonController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: handle the event when the skip button is pressed based on the current level 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

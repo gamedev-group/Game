@@ -1,3 +1,12 @@
+/***************************************************************
+*file: ItemDisplay.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: display the items on screen 
+*
+****************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,6 +57,8 @@ public class ItemDisplay : MonoBehaviour
         icons[item].quantityDisplay.text = newQuantity.ToString();
     }
 
+    //function: ChangeSelectedItem
+    //purpose: switch between the items 
     void ChangeSelectedItem(PlaceableScriptableObject item) {
         foreach(PlaceableScriptableObject obj in icons.Keys) {
             icons[obj].DeselectBackground();

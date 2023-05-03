@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/***************************************************************
+*file: PlayerController.cs
+*author: Group
+*class: CS 4700- Game Development
+*assignment: Program 4
+*
+*purpose: Control the player's object movements and its orientation 
+*
+****************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
