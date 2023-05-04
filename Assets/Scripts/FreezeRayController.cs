@@ -72,7 +72,7 @@ public class FreezeRayController : MonoBehaviour
                     animator.enabled = false;
                 }
                 if (enemy.TryGetComponent<DoesDamage>(out DoesDamage dD)){ 
-                    dD.enabled = false;
+                    Destroy(dD);
                 }
                 if (enemy.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)) {
                     rb.constraints = RigidbodyConstraints2D.FreezeAll;
