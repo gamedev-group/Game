@@ -99,6 +99,8 @@ public class PauseMenuController : MonoBehaviour
     //purpose: go back to main menu 
     public void MenuButtonClicked()
     {
+        isGamePaused = false; 
+        
         // Play a sound effect when the button is clicked
         SoundManagerController.PlaySoundEffect("buttonclick");
 
