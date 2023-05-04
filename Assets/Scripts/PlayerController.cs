@@ -37,9 +37,10 @@ public class PlayerController : MonoBehaviour
         //handle the walking of the player 
         WalkHandler();
 
+        //if the Player presses R key --> reset the level 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            GameManager.instance.hasMagnet = false; 
+            GameManager.instance.ResetLevel(); 
         }
     }
     
