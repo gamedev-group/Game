@@ -24,7 +24,7 @@ public class WinFlag : MonoBehaviour
             SoundManagerController.PlaySoundEffect("levcomp"); 
             //wait to play the sound effect 
             System.Threading.Thread.Sleep(800);
-            
+            //Indicate the player has won
             GameManager.instance.won = true; 
         }
     }

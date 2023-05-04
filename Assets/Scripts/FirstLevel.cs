@@ -20,7 +20,7 @@ public class FirstLevel : MonoBehaviour
     public float changeTime; // the duration of the cutscene
 
     //Function:Update
-    //Purpose: Update is colled once per frame
+    //Purpose: Update is called once per frame
     void Update()
     {
         // Calculate the time remaining for the cutscene
