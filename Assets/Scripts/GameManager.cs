@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     // whether or not the player has hit an enemy or a spike
     public string hitEnemyOrSpike;
 
+    public bool isReset = false; 
+
     void Awake()
     {
         // if no GameManager instance exists, set it to this instance
@@ -77,8 +79,11 @@ public class GameManager : MonoBehaviour
     //purpose: load the same level again
     public void ResetLevel()
     {
+        isReset = true;
+        
         //load the scene for the same level again 
         SceneManager.LoadScene("Level" + currentLevel); 
+
         //reset the time 
         GameManager.instance.levelStartTime = Time.time; 
     }

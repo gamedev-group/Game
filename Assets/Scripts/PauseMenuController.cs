@@ -55,7 +55,7 @@ public class PauseMenuController : MonoBehaviour
         {
             itemPlacerUI.SetActive(false);
         }
-        else
+        else 
         {
             itemPlacerUI.SetActive(true); 
         }
@@ -133,6 +133,9 @@ public class PauseMenuController : MonoBehaviour
     //purpose:  Reset the current level of the game to its initial state 
     public void ResetLevel()
     {
+        //game not paused anymore 
+        isGamePaused = false; 
+
         // Play a button click sound effect to provide audio feedback to the player
         SoundManagerController.PlaySoundEffect("buttonclick");
         // Wait for a short period of time before resetting the level
