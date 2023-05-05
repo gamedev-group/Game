@@ -29,7 +29,7 @@ public class PauseMenuController : MonoBehaviour
     void Awake()
     {
         //initially the pause menu is not shown 
-        pauseMenu.SetActive(false); 
+        pauseMenu.SetActive(false);
     }
 
     //Function:Update
@@ -157,8 +157,11 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1f; 
     }
 
-    public void ButtonPressed()
+    //name: InifiniteItemsTogglePressed
+    //purpose: checks to see if the infinite toggle has been pressed activates the infinite
+    //items option in GameManager
+    public void InifiniteItemsTogglePressed(bool tog)
     {
-        GameManager.instance.infiniteItems = true; 
+        GameManager.instance.infiniteItems = tog;
     }
 }
