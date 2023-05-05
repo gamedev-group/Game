@@ -105,7 +105,7 @@ public class ItemPlacer : MonoBehaviour
         }
 
         // Check if the player has pressed the spacebar to activate the item.
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             // Shoot a raycast downwards from the player's position towards the ground
             RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
@@ -138,7 +138,6 @@ public class ItemPlacer : MonoBehaviour
                     else
                     {
                         // Spawn the object at the hit point with no rotation.
-                        
                         spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
 
                         // If the player is facing to the left, rotate the object 180 degrees on the y to reverse its direction.
@@ -150,7 +149,7 @@ public class ItemPlacer : MonoBehaviour
                         }
                     }
                 }
-                else if (!needsToPlace && objectDictionary[selected] != 0) {
+                else if (!needsToPlace) {
                     //check if the selected item is freeze ray or magnet ray 
                     // If the selected item is a freeze ray or magnet ray, spawn the object at Vector3.zero.
                     if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
