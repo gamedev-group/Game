@@ -105,7 +105,7 @@ public class ItemPlacer : MonoBehaviour
         }
 
         // Check if the player has pressed the spacebar to activate the item.
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             // Shoot a raycast downwards from the player's position towards the ground
             RaycastHit2D hit = Physics2D.Raycast(placeTransform.position, Vector2.down, 1.0f, groundLayer);
