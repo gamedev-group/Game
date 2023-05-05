@@ -100,7 +100,9 @@ public class PauseMenuController : MonoBehaviour
     public void MenuButtonClicked()
     {
         isGamePaused = false; 
-        
+
+        GameManager.instance.infiniteItems = false;
+
         // Play a sound effect when the button is clicked
         SoundManagerController.PlaySoundEffect("buttonclick");
 
@@ -138,6 +140,8 @@ public class PauseMenuController : MonoBehaviour
         //game not paused anymore 
         isGamePaused = false; 
 
+        GameManager.instance.infiniteItems = false;
+
         // Play a button click sound effect to provide audio feedback to the player
         SoundManagerController.PlaySoundEffect("buttonclick");
         // Wait for a short period of time before resetting the level
@@ -151,5 +155,10 @@ public class PauseMenuController : MonoBehaviour
         // Resume the game by setting the time scale to 1
         // This ensures that the game continues running normally after the level is reset
         Time.timeScale = 1f; 
+    }
+
+    public void ButtonPressed()
+    {
+        GameManager.instance.infiniteItems = true; 
     }
 }

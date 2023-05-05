@@ -39,8 +39,11 @@ public class GameManager : MonoBehaviour
     public bool hasReleased = false;
     // whether or not the player has hit an enemy or a spike
     public string hitEnemyOrSpike;
-
+    //check if the game is reset 
     public bool isReset = false; 
+
+    //check if infinite items are required 
+    public bool infiniteItems = false; 
 
     void Awake()
     {
@@ -63,6 +66,8 @@ public class GameManager : MonoBehaviour
     //purpose: continue the game from the last level saved 
     public void ContinueGame()
     {
+        infiniteItems = false; 
+
         //start the time 
         GameManager.instance.levelStartTime = Time.time; 
 
@@ -80,6 +85,8 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         isReset = true;
+
+        infiniteItems = false; 
         
         //load the scene for the same level again 
         SceneManager.LoadScene("Level" + currentLevel); 
@@ -92,6 +99,8 @@ public class GameManager : MonoBehaviour
     //purpose: load the level select 
     public void StartGame()
     {
+        infiniteItems = false; 
+         
         //sound effect of button click 
         SoundManagerController.PlaySoundEffect("buttonclick"); 
         //wait a little before changing the scene 
@@ -115,6 +124,8 @@ public class GameManager : MonoBehaviour
             // if the player has completed the last level, restart at level 1
             currentLevel = 1;
         }
+
+        infiniteItems = false; 
 
         //load the corresponding level (scene)
         SceneManager.LoadScene("Level" + currentLevel); 

@@ -117,72 +117,130 @@ public class ItemPlacer : MonoBehaviour
             bool needsToPlace = selected.requiresGround;
             GameObject spawnedObj;
 
-            // If the item can be placed and the player has at least one of the selected item in their inventory:
-            if (canPlace && objectDictionary[selected] != 0)
+            if(GameManager.instance.infiniteItems)
             {
-                // If the selected item is a plank, play a sound effect.
-                if (selected.itemName == "Plank")
+                if (canPlace)
                 {
-                    SoundManagerController.PlaySoundEffect("plank");
-                }
-
-                // Print the location where the item will be placed.
-                print("Floor Hit" + hit.point);
-
-                // If the selected item is a freeze ray, spawn the object at Vector3.zero.
-                if (selected.itemName == "Freeze Ray")
-                {
-                    spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
-                }
-                else
-                {
-                    // Spawn the object at the hit point with no rotation.
-                    
-                    spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
-
-                    // If the player is facing to the left, rotate the object 180 degrees on the y to reverse its direction.
-                    if (((int)transform.rotation.eulerAngles.y) == 180)
+                    // If the selected item is a plank, play a sound effect.
+                    if (selected.itemName == "Plank")
                     {
-                        spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
-                    } else {
-                        print(transform.rotation.eulerAngles.y);
+                        SoundManagerController.PlaySoundEffect("plank");
+                    }
+
+                    // Print the location where the item will be placed.
+                    print("Floor Hit" + hit.point);
+
+                    // If the selected item is a freeze ray, spawn the object at Vector3.zero.
+                    if (selected.itemName == "Freeze Ray")
+                    {
+                        spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
+                    }
+                    else
+                    {
+                        // Spawn the object at the hit point with no rotation.
+                        
+                        spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
+
+                        // If the player is facing to the left, rotate the object 180 degrees on the y to reverse its direction.
+                        if (((int)transform.rotation.eulerAngles.y) == 180)
+                        {
+                            spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        } else {
+                            print(transform.rotation.eulerAngles.y);
+                        }
                     }
                 }
+                else if (!needsToPlace && objectDictionary[selected] != 0) {
+                    //check if the selected item is freeze ray or magnet ray 
+                    // If the selected item is a freeze ray or magnet ray, spawn the object at Vector3.zero.
+                    if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
+                    {
+                        spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
+                    }
+                    else
+                    {
+                        // Spawn the object at the player's position with no rotation.
+                        spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
+                    }
 
-                // Decrease the amount of selected item in the player's inventory by 1.
-                objectDictionary[selected]--;
-
-                // Call the itemUsed function with the selected item and the new amount in the player's inventory as parameters.
-                itemUsed(selected, objectDictionary[selected]);
+                    // If the player is facing to the left and the selected item is not a freeze ray or magnet ray, rotate the object 180 degrees on the y to reverse its direction.
+                    if (transform.rotation.eulerAngles.y == 180)
+                    {
+                        if (selected.itemName != "Freeze Ray" || selected.itemName != "Magnet Ray")
+                        {
+                            spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        }
+                    }
+                }
             }
-            // If the item doesn't require a ground to be placed and the player has at least one of the selected item in their inventory:
-            else if (!needsToPlace  && objectDictionary[selected] != 0) {
-                //check if the selected item is freeze ray or magnet ray 
-                // If the selected item is a freeze ray or magnet ray, spawn the object at Vector3.zero.
-                if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
+            else
+            {
+                // If the item can be placed and the player has at least one of the selected item in their inventory:
+                if (canPlace && objectDictionary[selected] != 0)
                 {
-                    spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
-                }
-                else
-                {
-                    // Spawn the object at the player's position with no rotation.
-                    spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
-                }
-
-                // If the player is facing to the left and the selected item is not a freeze ray or magnet ray, rotate the object 180 degrees on the y to reverse its direction.
-                if (transform.rotation.eulerAngles.y == 180)
-                {
-                    if (selected.itemName != "Freeze Ray" || selected.itemName != "Magnet Ray")
+                    // If the selected item is a plank, play a sound effect.
+                    if (selected.itemName == "Plank")
                     {
-                        spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        SoundManagerController.PlaySoundEffect("plank");
                     }
+
+                    // Print the location where the item will be placed.
+                    print("Floor Hit" + hit.point);
+
+                    // If the selected item is a freeze ray, spawn the object at Vector3.zero.
+                    if (selected.itemName == "Freeze Ray")
+                    {
+                        spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
+                    }
+                    else
+                    {
+                        // Spawn the object at the hit point with no rotation.
+                        
+                        spawnedObj = Instantiate(selected.prefab, hit.point, Quaternion.identity);
+
+                        // If the player is facing to the left, rotate the object 180 degrees on the y to reverse its direction.
+                        if (((int)transform.rotation.eulerAngles.y) == 180)
+                        {
+                            spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        } else {
+                            print(transform.rotation.eulerAngles.y);
+                        }
+                    }
+
+                    // Decrease the amount of selected item in the player's inventory by 1.
+                    objectDictionary[selected]--;
+
+                    // Call the itemUsed function with the selected item and the new amount in the player's inventory as parameters.
+                    itemUsed(selected, objectDictionary[selected]);
                 }
+                // If the item doesn't require a ground to be placed and the player has at least one of the selected item in their inventory:
+                else if (!needsToPlace && objectDictionary[selected] != 0) {
+                    //check if the selected item is freeze ray or magnet ray 
+                    // If the selected item is a freeze ray or magnet ray, spawn the object at Vector3.zero.
+                    if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
+                    {
+                        spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
+                    }
+                    else
+                    {
+                        // Spawn the object at the player's position with no rotation.
+                        spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
+                    }
 
-                // Decrease the amount of selected item in the player's inventory by 1.
-                objectDictionary[selected]--;
+                    // If the player is facing to the left and the selected item is not a freeze ray or magnet ray, rotate the object 180 degrees on the y to reverse its direction.
+                    if (transform.rotation.eulerAngles.y == 180)
+                    {
+                        if (selected.itemName != "Freeze Ray" || selected.itemName != "Magnet Ray")
+                        {
+                            spawnedObj.transform.Rotate(new Vector3(0, 180, 0));
+                        }
+                    }
+                    // Decrease the amount of selected item in the player's inventory by 1.
+                    objectDictionary[selected]--;
 
-                // Call the itemUsed function with the selected item and the new amount in the player's inventory as parameters.
-                itemUsed(selected, objectDictionary[selected]);
+                    // Call the itemUsed function with the selected item and the new amount in the player's inventory as parameters.
+                    itemUsed(selected, objectDictionary[selected]);
+                }
             }
         }
     }
