@@ -90,6 +90,27 @@ public class ItemPlacer : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) { //If the player hit the 1 key
+            index = 0;
+            UpdateItemIndex();
+        } 
+        //If the player hit the 2 key and there are at least 2 unique objects available
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && objectList.Length >= 2) {
+            index = 1;
+            UpdateItemIndex();
+        }
+        //If the player hit the 3 key and there are at least 3 unique objects available
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && objectList.Length >= 3) {
+            index = 2;
+            UpdateItemIndex();
+        }
+        //If the player hit the 4 key and there are at least 4 unique objects available
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && objectList.Length >= 4) {
+            index = 4;
+            UpdateItemIndex();
+        }
+        //We don't have to check any other numerical keys since the most unique items you can have are 4.
+
         // Check if the player has pressed the Q or E keys to change the selected item.
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) {
             // If the player has pressed Q, decrement the index.
@@ -100,18 +121,7 @@ public class ItemPlacer : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E))
                 index++;
 
-            // Set the index to the appropriate value within the object list.
-            // Note: the object list is circular
-            index = Modulo(index, objectList.Length); 
-
-            // Set the selected item to the item at the selected index.
-            selected = objectList[index].item;
-
-            // Signal that the selected item has been changed.
-            selectionChanged(selected);
-
-            // Print the name of the selected item to the console.
-            print("Selected: " + selected.itemName);
+            UpdateItemIndex();
         }
 
         // Check if the player has pressed the spacebar to activate the item.
@@ -260,5 +270,23 @@ public class ItemPlacer : MonoBehaviour
     //unlike remainder operations, modulo operations will "wrap" when a is a negative number.
     int Modulo(int a, int b) {
         return (a % b + b) % b;
+    }
+
+    //name: UpdateItemIndex
+    //purpose: this will be called whenever the user hits a key that changes the currently selected item. It is placed
+    //into a method to avoid repetition.
+    void UpdateItemIndex() {
+        // Set the index to the appropriate value within the object list.
+        // Note: the object list is circular
+        index = Modulo(index, objectList.Length); 
+
+        // Set the selected item to the item at the selected index.
+        selected = objectList[index].item;
+
+        // Signal that the selected item has been changed.
+        selectionChanged(selected);
+
+        // Print the name of the selected item to the console.
+        print("Selected: " + selected.itemName);
     }
 }
