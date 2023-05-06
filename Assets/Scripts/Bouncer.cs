@@ -22,9 +22,9 @@ public class Bouncer : MonoBehaviour
     //purpose: detect collisions with other objects that have 2D colliders 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+        //if the colliding object is a player or enemy
         if ((other.CompareTag("Player") || other.CompareTag("Enemy")))
-        { //if the colliding object is a player or enemy
+        { 
             animator.SetTrigger("contact"); //trigger the contact animation in the animator component
 
             //play the spring sound effect 

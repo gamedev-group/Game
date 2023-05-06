@@ -19,7 +19,8 @@ public class DoesDamage : MonoBehaviour
     // the amount of damage caused by the object
     public int contactDamage = 1;
 
-    //method from Unity's API to avoid compile errors when inheriting from MonoBehaviour
+    //function:TryGetComponent
+    //purpose:method from Unity's API to avoid compile errors when inheriting from MonoBehaviour
     internal bool TryGetComponent<T>(out object rb)
     {
         throw new NotImplementedException();

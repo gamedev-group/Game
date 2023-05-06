@@ -59,8 +59,11 @@ public class ItemPlacer : MonoBehaviour
     private PlaceableScriptableObject selected;
 
     // The time that the magnet was activated.
-    public static float magnetStartTime; 
+    public static float magnetStartTime;
 
+
+    //function:Awake
+    //purpose: Iterate through each item in the object list and add it to the dictionary.
     void Awake() {
         // Iterate through each item in the object list and add it to the dictionary.
         foreach (Item i in objectList) {
@@ -68,6 +71,8 @@ public class ItemPlacer : MonoBehaviour
         }
     }
 
+    //function: Start
+    //purpose: signal that object dictionanry is create and then set selected item as first item
     void Start() {
         // Signal that the object dictionary has been generated.
         signalDictionary(objectDictionary);
@@ -77,6 +82,11 @@ public class ItemPlacer : MonoBehaviour
         selectionChanged(selected);
     }
 
+
+    //function:Update
+    //purpose: Every frame checks to see if player has selected a diffrent items and checks if
+    //player wants to use item. If they do use the item decease the number of items in player inventory
+    // and activate the item
     [System.Obsolete]
     void Update()
     {

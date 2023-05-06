@@ -24,6 +24,9 @@ public class ItemDisplay : MonoBehaviour
     //create a dictionary to store the PlaceableScriptableObject and its corresponding item icon
     Dictionary<PlaceableScriptableObject, ItemIcon> icons = new Dictionary<PlaceableScriptableObject, ItemIcon>();
 
+
+    //function:OnEnable
+    //purpose: subscribe to events triggered by the ItemPlacer script
     void OnEnable() {
         //subscribe to events triggered by the ItemPlacer script
         ItemPlacer.signalDictionary += InitializeDisplay;
@@ -31,6 +34,8 @@ public class ItemDisplay : MonoBehaviour
         ItemPlacer.selectionChanged += ChangeSelectedItem;
     }
 
+    //function:OnDisable
+    //purpose: unsubscribe from events triggered by the ItemPlacer script
     void OnDisable() {
         //unsubscribe from events triggered by the ItemPlacer script
         ItemPlacer.signalDictionary -= InitializeDisplay;

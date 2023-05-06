@@ -18,7 +18,8 @@ public class HandleknobController : MonoBehaviour
     //get the handle knob object 
     public RectTransform handleKnob; 
 
-    // Start is called before the first frame update
+    //function: Start
+    //purpose: Sets the min and max anchor points for the volume handle knobs
     void Start()
     {
         //adjust the min and max so the knob is at the max position 

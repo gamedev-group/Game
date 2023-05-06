@@ -18,7 +18,8 @@ public class FillHandler : MonoBehaviour
     //get the rect transform component of fill game object 
     public RectTransform fill; 
 
-    // Start is called before the first frame update
+    //function:Start
+    //purpose: Start is called before the first frame update
     void Start()
     {
         //fill the volume slider to its max 

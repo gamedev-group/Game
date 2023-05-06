@@ -37,6 +37,8 @@ public class CameraController : MonoBehaviour
     private float upBoundary; 
     private float downBoundary;
 
+    //function: Awake
+    //purpose: Sets the 4 boundaries for the camera
     private void Awake() {
         //set the initial values of the boundaries 
         leftBoundary = leftBoundaryTransform.position.x;
@@ -45,7 +47,8 @@ public class CameraController : MonoBehaviour
         downBoundary = downBoundaryTransform.position.y;
     }
 
-    //update the camera position after all objects are moved in the frame
+    //function:LateUpdate
+    //pupose:update the camera position after all objects are moved in the frame
     private void LateUpdate()
     {
         if (playerTransform == null) return;

@@ -23,12 +23,16 @@ public class FreezeRayController : MonoBehaviour
     private Transform firePoint; //The point from which the Freeze Ray is fired
 
 
-
+    //function: Awake
+    //purpose: Gets line renderer componet from scene
     private void Awake() {
         //Get the Line Renderer component
         lineRenderer = GetComponent<LineRenderer>();
     }
 
+    //funtion:Start
+    //purpose:Finds all neccisary game objects and transforms within the scene to be used for the
+    //firing of the freeze ray
     private void Start()
     {
         lineRenderer.enabled = false; //Hide the Freeze Ray line
@@ -46,6 +50,9 @@ public class FreezeRayController : MonoBehaviour
         //Invoke("SelfDestruct", freezeRayLifeSpan);
     }
 
+    //function:Shoot
+    //purpose:Responsible for the actually displying the freeze ray beam, checking if enemies are hit
+    // and freezing them
     IEnumerator Shoot()
     {
         // shoot a raycast from the fire point of the player

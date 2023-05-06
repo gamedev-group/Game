@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
     //check if infinite items are required 
     public bool infiniteItems = false; 
 
+    //function: Awake
+    //purpose: Check if Gamemanager object exists. If not create it
     void Awake()
     {
         // if no GameManager instance exists, set it to this instance
