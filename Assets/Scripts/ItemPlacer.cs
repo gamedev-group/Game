@@ -91,22 +91,26 @@ public class ItemPlacer : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) { //If the player hit the 1 key
+            //set the selected item to the first
             index = 0;
             UpdateItemIndex();
         } 
         //If the player hit the 2 key and there are at least 2 unique objects available
         else if (Input.GetKeyDown(KeyCode.Alpha2) && objectList.Length >= 2) {
+            //set the selected item to the second
             index = 1;
             UpdateItemIndex();
         }
         //If the player hit the 3 key and there are at least 3 unique objects available
         else if (Input.GetKeyDown(KeyCode.Alpha3) && objectList.Length >= 3) {
+            //set the selected item to the third
             index = 2;
             UpdateItemIndex();
         }
         //If the player hit the 4 key and there are at least 4 unique objects available
         else if (Input.GetKeyDown(KeyCode.Alpha4) && objectList.Length >= 4) {
-            index = 4;
+            //set the selected item to the fourth
+            index = 3;
             UpdateItemIndex();
         }
         //We don't have to check any other numerical keys since the most unique items you can have are 4.
