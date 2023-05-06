@@ -131,7 +131,7 @@ public class ItemPlacer : MonoBehaviour
                     print("Floor Hit" + hit.point);
 
                     // If the selected item is a freeze ray, spawn the object at Vector3.zero.
-                    if (selected.itemName == "Freeze Ray")
+                    if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
                     {
                         spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
                     }
@@ -158,6 +158,7 @@ public class ItemPlacer : MonoBehaviour
                     }
                     else
                     {
+                        print("magnet"); 
                         // Spawn the object at the player's position with no rotation.
                         spawnedObj = Instantiate(selected.prefab, placeTransform.position, Quaternion.identity);
                     }
@@ -187,7 +188,7 @@ public class ItemPlacer : MonoBehaviour
                     print("Floor Hit" + hit.point);
 
                     // If the selected item is a freeze ray, spawn the object at Vector3.zero.
-                    if (selected.itemName == "Freeze Ray")
+                    if (selected.itemName == "Freeze Ray" || selected.itemName == "Magnet Ray")
                     {
                         spawnedObj = Instantiate(selected.prefab, Vector3.zero, Quaternion.identity);
                     }
