@@ -50,4 +50,11 @@ public class UIController : MonoBehaviour
     {
         GameManager.instance.Back(); 
     }
+
+    //function: GuidelinesButtonClicked
+    //purpose: This function is called when the guidelines button is clicked on the scene. It calls the Guidelines function from the GameManager instance.
+    public void GuidelinesButtonClicked()
+    {
+        GameManager.instance.Guidelines(); 
+    }
 }

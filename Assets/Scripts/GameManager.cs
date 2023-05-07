@@ -171,4 +171,16 @@ public class GameManager : MonoBehaviour
         // Loads the Main Menu
         SceneManager.LoadScene("MainMenu"); 
     }
+
+    //function: Guidelines
+    //purpose: go to the guidelines scene 
+    public void Guidelines()
+    {
+        //sound effect of button click 
+        SoundManagerController.PlaySoundEffect("buttonclick"); 
+        //wait a little before changing the scene 
+        System.Threading.Thread.Sleep(500);
+        // Loads the Main Menu
+        SceneManager.LoadScene("Guideline"); 
+    }
 }
