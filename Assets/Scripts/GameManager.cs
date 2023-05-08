@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
    
     // the number of levels in the game
-    public int maxLevel = 11;
+    public int maxLevel = 13;
     // the current level the player is on
     public int currentLevel = 0;
 
